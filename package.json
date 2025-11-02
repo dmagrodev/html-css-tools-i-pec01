@@ -33,5 +33,10 @@
     "stylelint-config-recess-order": "^7.4.0",
     "stylelint-config-recommended-scss": "^16.0.2",
     "stylelint-scss": "^6.12.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0"
   }
 }
