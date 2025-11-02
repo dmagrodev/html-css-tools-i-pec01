@@ -1,0 +1,37 @@
+{
+  "name": "kioto-travel",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "source": "src/index.html",
+  "scripts": {
+    "start": "npm-run-all clean parcel:dev ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm-run-all clean parcel:build",
+    "parcel:dev": "parcel",
+    "parcel:build": "parcel build",
+    "clean": "rimraf dist .parcel-cache"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.0",
+    "autoprefixer": "^10.4.21",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.16.0",
+    "postcss": "^8.5.6",
+    "posthtml-include": "^2.0.1",
+    "rimraf": "^6.1.0",
+    "sass": "^1.93.3",
+    "stylelint": "^16.25.0",
+    "stylelint-config-recess-order": "^7.4.0",
+    "stylelint-config-recommended-scss": "^16.0.2",
+    "stylelint-scss": "^6.12.1"
+  }
+}
