@@ -1,0 +1,178 @@
+@use "../variables" as vars;
+@use "../utils/functions" as func;
+
+/* ---------------------------------- */
+/* HEADER*/
+/* ---------------------------------- */
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    width: 100%; 
+    background-color: vars.$color-kioto-container; 
+    border-bottom: func.rem(2) solid vars.$color-kioto-bg;
+    border-radius: func.rem(10);
+    box-shadow: 0 func.rem(4) func.rem(10) func.rem(-4) rgba(0, 0, 0, 0.2);
+}
+
+.main-nav {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding-left: func.rem(20);
+    padding-right: func.rem(20);
+
+    @media (min-width: vars.$mq-desktop-width) {
+        flex-wrap: wrap ; // por si en algun momento no toma bien el tamaño en vista escritorio
+    }
+    
+}
+
+.main-nav__left {
+    justify-content: flex-start;
+}
+
+.main-nav__right {
+    justify-content: flex-end; 
+}
+
+.main-nav__title {
+    display: flex;
+    align-items:first baseline;
+    padding: 0 2rem;
+    margin: 0;
+    font-family: vars.$font-family-sans-serif;
+    text-decoration: none;
+}
+
+.title__text--primary{
+    color: vars.$color-kioto-title;
+    font-size: func.rem(36);
+    font-weight: bold;
+    
+}
+
+.title__text--secondary{
+    padding: func.rem(10);
+    color: vars.$color-kioto-secondary;
+    font-size: func.rem(28);
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: vars.$color-kioto-title; 
+    }
+}
+
+.main-nav__logo {
+    width: func.rem(100); 
+    font-size: func.rem(24);
+    font-weight: bold;
+    color: vars.$color-Kioto-blue;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: 
+            box-shadow 0.4s ease-in-out,   //pruebas de transicion y destello
+            transform 0.4s ease-in-out;    //pruebas de transicion y destello
+    box-shadow: 0 0 0 transparent;          //pruebas de transicion y destello
+    &:hover {//todo no me convence esta idea
+        box-shadow: 
+                0 0 10px vars.$color-kioto-secondary, 
+                0 0 20px rgba(vars.$color-kioto-secondary, 0.5); 
+                transform: rotate(5deg) scale(1.05);
+            }
+}
+
+.main-nav__toggle {
+    display: block; 
+    padding: 1rem;
+    font-size: func.rem(40);
+    color: vars.$color-Kioto-blue;
+    cursor: pointer; 
+    background: none;
+    border: none;
+
+    &:hover {
+        color: vars.$color-kioto-secondary; 
+    }
+
+    @media (min-width: vars.$mq-desktop-width) {
+        display: none; 
+    }
+}
+
+.main-nav__list { 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    display: none;
+    flex-direction: column; 
+    width: 100%;
+    padding: 0;
+    margin: 0; 
+    list-style: none;
+    background-color: vars.$color-kioto-container;
+    box-shadow: 0 func.rem(4) func.rem(10) func.rem(-2) rgba(0, 0, 0, 0.2);
+
+    @media (min-width: vars.$mq-desktop-width) {
+        position: static; 
+        display: flex; 
+        flex-direction: row; 
+        width: auto;
+        box-shadow: none;
+    }
+}
+
+.main-nav__list--is-open {
+    display: flex;
+    border-radius: 5px 5px 10px 10px;
+    margin-top: 5px;
+    @media (min-width: vars.$mq-desktop-width) {
+        display: flex; 
+    }
+}
+
+.main-nav__item {
+    position: relative;
+    width: 100%;
+    border-bottom: func.rem(1) solid vars.$color-Kioto-grey-light;
+    font-size: func.rem(18);
+    font-family: vars.$font-family-sans-serif;
+    font-weight: 600;
+    &::after {
+        content: none;
+    }
+
+    @media (min-width: vars.$mq-desktop-width) {
+        width: auto;
+        padding: 0 1rem;
+        border-bottom: none; 
+
+        &:not(:last-child)::after {
+            position: absolute;
+            top: 50%;
+            right: 0; 
+            font-size: func.rem(24);
+            color: vars.$color-Kioto-grey-light;
+            content: '|'; 
+            transform: translateY(-50%); 
+        }
+    }
+}
+
+.main-nav__link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: vars.$color-kioto-text;
+    text-decoration: none; 
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: vars.$color-kioto-secondary; 
+    }
+    
+    &:active {
+        color: vars.$color-kioto-secondary; 
+    }
+}

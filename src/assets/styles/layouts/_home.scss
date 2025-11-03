@@ -1,3 +1,6 @@
+@use "../variables" as vars;
+@use "../utils/functions" as func;
+
 body {
   height: 100vh;
   color: #1f1f1f;

@@ -29,6 +29,7 @@
     "posthtml-include": "^2.0.1",
     "rimraf": "^6.1.0",
     "sass": "^1.93.3",
+    "sharp": "^0.33.5",
     "stylelint": "^16.25.0",
     "stylelint-config-recess-order": "^7.4.0",
     "stylelint-config-recommended-scss": "^16.0.2",

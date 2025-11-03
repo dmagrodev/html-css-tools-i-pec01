@@ -1,0 +1,13 @@
+/* ---------------------------------- */
+/* FUNCTIONS*/
+/* ---------------------------------- */
+
+//convertir píxeles a REMs
+@function rem($pixels) {
+    @return calc($pixels / 16) * 1rem;
+}
+
+// reducir la opacidad (usada para el pipe en el header)
+@function half-opacity($color) {
+    @return rgba($color, 0.5); 
+}

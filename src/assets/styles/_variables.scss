@@ -1,2 +1,27 @@
 @use "sass:color";
-@use "./utils/functions" as func;
+@use "../styles/utils/functions" as func;
+
+//FONTS
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$font-family-serif: "Georgia", "Times New Roman", serif;
+
+// Variables para tipografía
+$font-alt-family-base: 'Tsukimi Rounded', sans-serif;
+$font-alt-weight-regular: 400;
+$fontalt-weight-bold: 700;
+
+// MEDIA BREAKPOINTS (Mobile First)
+$mq-min-width: func.rem(420);
+$mq-desktop-width: func.rem(1000);
+
+//COLORES PAGINA
+$color-kioto-bg: #83958f;     
+$color-kioto-secondary: #FF3B3F; 
+$color-kioto-container: #fff8f0; 
+$color-kioto-title: #1d3557; 
+$color-kioto-subtitle: #a66249; 
+$color-kioto-text: #333333; 
+$color-Kioto-blue: #000078;
+$color-Kioto-grey-light: #aaa; 
