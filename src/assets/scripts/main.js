@@ -7,11 +7,117 @@
 //https://docs.fontawesome.com/apis/javascript aqui documentacion
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 
-import { faCoffee, faHome, faMapMarkerAlt,faBars, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faHome, faMapMarkerAlt,faBars, faMinus, faChevronRight, faChevronLeft,faStar } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCoffee, faHome, faMapMarkerAlt,faBars, faMinus);
+library.add(faCoffee, faHome, faMapMarkerAlt,faBars, faMinus,faChevronRight, faChevronLeft,faStar);
 
 dom.watch();
+
+// -----------------------------------------------------------------//
+// CLASE: imageSlider
+// -----------------------------------------------------------------//
+class imageSlider {
+    constructor(sliderElement) {
+        this.slider = sliderElement;
+        this.sliderTrack = sliderElement.querySelector('.slider__track');
+        this.slides = sliderElement.querySelectorAll('.slider__slide');
+        this.prevBtn = sliderElement.querySelector('.slider__btn--prev');
+        this.nextBtn = sliderElement.querySelector('.slider__btn--next');
+        this.dotsContainer = sliderElement.querySelector('.slider__dots');
+
+        this.currentIndex = 0;
+        this.totalSlides = this.slides.length;
+        this.autoAdvanceTime = 7000;
+        this.autoAdvanceInterval = null;
+
+        // Inicializar el slider
+        this.createDots();
+        this.addEventListeners();
+        this.startAutoAdvance();
+        this.moveToSlide(0);
+    }
+
+    
+    // Mover slider a una posicion
+    // calculo del desplazamiento es acumulativo, se toma en cuenta el tamaño de la imagen
+    moveToSlide(index) {
+        if (index < 0) {
+            index = this.totalSlides - 1; 
+        } else if (index >= this.totalSlides) {
+            index = 0; 
+        }
+        this.currentIndex = index;
+
+        
+        let offset = 0; 
+        for (let i = 0; i < this.currentIndex; i++) 
+        {
+            offset += this.slides[i].offsetWidth; 
+        }
+        
+        this.sliderTrack.style.transform = `translateX(-${offset}px)`;
+        this.updateDots();
+    }
+    
+    nextSlide = () => {
+        this.moveToSlide(this.currentIndex + 1);
+    }
+    
+    prevSlide = () => {
+        this.moveToSlide(this.currentIndex - 1);
+    }
+
+    startAutoAdvance() {
+        if (this.totalSlides <= 1) return;
+        clearInterval(this.autoAdvanceInterval);
+        this.autoAdvanceInterval = setInterval(this.nextSlide, this.autoAdvanceTime);
+    }
+
+    stopAutoAdvance() {
+        clearInterval(this.autoAdvanceInterval);
+    }
+
+    createDots() {
+        this.slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('slider__dot');
+            dot.classList.toggle('slider__dot--active', index === this.currentIndex);
+            dot.addEventListener('click', () => {
+                this.stopAutoAdvance();
+                this.moveToSlide(index);
+                this.startAutoAdvance();
+            });
+            this.dotsContainer.appendChild(dot);
+        });
+    }
+
+    updateDots() {
+        this.dotsContainer.querySelectorAll('.slider__dot').forEach((dot, index) => {
+            dot.classList.toggle('slider__dot--active', index === this.currentIndex);
+        });
+    }
+
+    addEventListeners() {
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => {
+                this.stopAutoAdvance();
+                this.prevSlide();
+                this.startAutoAdvance();
+            });
+        }
+        
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => {
+                this.stopAutoAdvance();
+                this.nextSlide();
+                this.startAutoAdvance();
+            });
+        }
+        
+        this.slider.addEventListener('mouseenter', this.stopAutoAdvance);
+        this.slider.addEventListener('mouseleave', this.startAutoAdvance);
+    }
+}
 
 
 // -----------------------------------------------------------------//
@@ -30,7 +136,7 @@ const initMobileMenuToggle = () => {
             
             const isExpanded = navList.classList.contains(OPEN_MOD);
             toggleButton.setAttribute('aria-expanded', isExpanded); 
-            //TODO volver aqui con esta importacion no funciona correctamente, aunque cambia el icono no actualiza el icono
+            //TODO volver aqui con esta importacion no funciona correctamente, aunque cambia el icono no actualiza el icono en imagen, parece qun problema con fontawesome
             // if (isExpanded) {
             //     toggleIcon.classList.remove('fa-bars');// HAMBURGUESA
             //     toggleIcon.classList.add('fa-minus'); // -
@@ -48,7 +154,14 @@ const initMobileMenuToggle = () => {
 const initApp = () => {
 
     initMobileMenuToggle();
+    
+    const allSliders = document.querySelectorAll('.slider'); //Collect de todos los sliders de la pagina
+    
+    allSliders.forEach(sliderElement => {
+        new imageSlider(sliderElement);
+    });
 };
+
 // -----------------------------------------------------------------//
 // LISTENER General
 // -----------------------------------------------------------------//

@@ -26,7 +26,7 @@
 
 .kioto-container-portada {
     max-width: 98vw;
-    padding: 1rem;
+    padding: 0rem;
     margin-top: 1rem;
     text-align: center;
     background-color: vars.$color-kioto-container;
@@ -37,7 +37,7 @@
 }
 
 .kioto-title__text{
-    padding-top: 2rem;
+    padding-top: 0.5rem;
     font-family: vars.$font-family-serif;
     font-size: func.rem(24);
     font-weight: 700;
@@ -65,11 +65,104 @@
  
 .kioto-content-block--centered{
     max-width: 800;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .kioto-content-block__paragraph{
     line-height: 1.6;
-    
 }
 
+.kioto-two-column-container {
+    display: flex;
+    flex-direction: column;
+    gap: func.rem(30);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    
+    @media (min-width: vars.$mq-desktop-width) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: func.rem(30);
+        align-items: center;
+        max-width: 1000;
+        margin: auto;
+
+    }
+}
+
+.kioto-two-column-container__content{
+    text-align: justify; 
+    padding: 1rem;
+
+    max-width: func.rem(450);
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.kioto-two-col-container__image {
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-radius: func.rem(8);
+    box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
+    background-color: vars.$color-kioto-bg-gradient;
+    max-width: 450;
+
+    @media (max-width: vars.$mq-desktop-width) { 
+        text-align: center;
+        margin: auto;
+    }
+}
+
+.kioto-two-col-container__map {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: func.rem(8);
+    box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
+
+
+    @media (max-width: vars.$mq-desktop-width) { 
+        text-align: center; 
+    }
+}
+
+.kioto-two-column-container__title{
+    font-size: 2rem;
+    @media (max-width: vars.$mq-desktop-width) { 
+        font-size: 1.5rem; 
+    }
+}
+
+.kioto-two-column-container__text{
+    font-size: func.rem(24);
+}
+
+.kioto__list {
+    max-width: func.rem(600);
+    padding: func.rem(10);
+    margin: func.rem(10) auto;
+    text-align: left;
+    list-style-type: disc;
+}
+
+.kioto__orderedlist {
+    max-width: func.rem(600);
+    padding: func.rem(10);
+    margin: func.rem(10) auto;
+    text-align: left;
+    list-style-type: decimal;
+}
+
+.kioto__item {
+    margin-bottom: func.rem(10);
+    font-size: func.rem(16);
+    color: vars.$color-kioto-text;
+}
+
+.kioto-two-column-container_img-item {
+  width: 100%;
+  height: auto;
+  border-radius: func.rem(15);
+  box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
+}

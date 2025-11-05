@@ -1,0 +1,99 @@
+@use "../variables" as vars;
+@use "../utils/functions" as func;
+
+/* ---------------------------------- */
+/* SLIDER / CARRUSEL */
+/* ---------------------------------- */
+
+
+.slider-section { 
+    padding-left: func.rem(10); 
+    padding-right: func.rem(10);
+    margin-bottom: func.rem(40);
+    height: auto;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider {
+    position: relative; 
+    width: 100%;
+    overflow: hidden;
+    border-radius: func.rem(10);
+    box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.2); 
+}
+
+.slider__track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.slider__slide { 
+    box-sizing: border-box;
+    flex-shrink: 0;
+    min-width: 100%; 
+}
+
+.slider__image {
+    display: block;
+    width: 100%;
+    height: func.rem(400);  
+    object-fit: cover; 
+
+    @media (min-width: vars.$mq-desktop-width) {
+        width: 100%;
+        height: func.rem(400); 
+    }
+}
+
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    height: 20%;
+    font-size: func.rem(20);
+    color: vars.$color-white;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: func.rem(5);
+    opacity: 0.8;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.slider__btn--prev {
+    left: func.rem(10);
+}
+
+.slider__btn--next {
+    right: func.rem(10);
+}
+
+.slider__dots {
+    position: absolute;
+    bottom: func.rem(10);
+    left: 50%;
+    z-index: 10;
+    display: flex;
+    gap: func.rem(8);
+    transform: translateX(-50%);
+}
+
+.slider__dot {
+    width: func.rem(10);
+    height: func.rem(10);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+
+    &--active {
+        background-color: vars.$color-white;
+    }
+}

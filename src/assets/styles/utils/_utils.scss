@@ -25,3 +25,15 @@
 .u-color-white{
     color: vars.$color-white;
 }
+
+.u-separator-horizontal {
+    width:70%;
+    margin:auto;
+}
+
+.u-img--large {
+  width: 100%;
+  height: auto;
+  border-radius: func.rem(15);
+  box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
+}
