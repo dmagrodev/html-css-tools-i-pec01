@@ -1,0 +1,60 @@
+@use "../variables" as vars;
+@use "../utils/functions" as func;
+
+/* ---------------------------------- */
+/* LIGTHBOX / MODAL*/
+/* ---------------------------------- */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(199, 199, 199, 0.669);
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.is-open { 
+    display: flex; 
+}
+
+.lightbox__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%; 
+    max-height: none;
+}
+
+.lightbox__image { 
+    display: block;
+    max-width: 99%;
+    max-height: 99vh;
+    object-fit: contain;
+    border-radius: func.rem(15);
+}
+
+.lightbox__close-btn {
+    position: absolute;
+    top: func.rem(20);
+    right: func.rem(30);
+    z-index: 4001;
+    font-size: func.rem(24);
+    color: vars.$color-white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    
+    &:hover {
+        opacity: 0.8;
+        color: vars.$color-kioto-secondary;
+    }
+}

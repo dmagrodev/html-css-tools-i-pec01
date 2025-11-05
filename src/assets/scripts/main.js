@@ -7,9 +7,9 @@
 //https://docs.fontawesome.com/apis/javascript aqui documentacion
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 
-import { faCoffee, faHome, faMapMarkerAlt,faBars, faMinus, faChevronRight, faChevronLeft,faStar } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faHome, faMapMarkerAlt,faBars, faMinus, faChevronRight, faChevronLeft,faStar ,faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCoffee, faHome, faMapMarkerAlt,faBars, faMinus,faChevronRight, faChevronLeft,faStar);
+library.add(faCoffee, faHome, faMapMarkerAlt,faBars, faMinus,faChevronRight, faChevronLeft,faStar,faTimesCircle);
 
 dom.watch();
 
@@ -120,6 +120,52 @@ class imageSlider {
 }
 
 
+
+// -----------------------------------------------------------------//
+// LIGHTBOX para Galeria
+// -----------------------------------------------------------------//
+const initLightboxGallery = () => {
+    const galleryImages = document.querySelectorAll('.gallery__image'); // todo darle otro nombre mas significativo, se amplio para que funcione con cualquier imagen
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeBtn = document.querySelector('.lightbox__close-btn');
+    
+    const openLightbox = (imageSrc) => {
+        lightboxImage.src = imageSrc;
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = ''; 
+    };
+
+    galleryImages.forEach(image => {
+        image.addEventListener('click', () => {
+            const fullUrl = image.getAttribute('src'); 
+            if (fullUrl) {
+                openLightbox(fullUrl);
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    
+    lightbox.addEventListener('click', (e) => {
+        if (e.target.classList.contains('lightbox')) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
+            closeLightbox();
+        }
+    });
+};
+
+
 // -----------------------------------------------------------------//
 // TOGGLE MENÚ for mobile view
 // -----------------------------------------------------------------//
@@ -154,7 +200,7 @@ const initMobileMenuToggle = () => {
 const initApp = () => {
 
     initMobileMenuToggle();
-    
+    initLightboxGallery(); 
     const allSliders = document.querySelectorAll('.slider'); //Collect de todos los sliders de la pagina
     
     allSliders.forEach(sliderElement => {

@@ -9,6 +9,17 @@
 .u-text--secondary {
     color: vars.$color-kioto-secondary;
 }
+.u-text--secondary {
+    color: vars.$color-kioto-secondary;
+}
+
+.u-text--subtitle {
+    color: vars.$color-kioto-subtitle;
+}
+
+.u-text--title {
+    color: vars.$color-kioto-title;
+}
 
 .u-text-center {
   text-align: center;
@@ -36,4 +47,11 @@
   height: auto;
   border-radius: func.rem(15);
   box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
+}
+
+.u-img--rounded {
+    border-radius: 50%;
+    float: left;
+    padding-right: 1.5rem;
+    shape-outside: circle();
 }
