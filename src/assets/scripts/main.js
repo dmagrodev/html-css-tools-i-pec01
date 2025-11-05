@@ -30,14 +30,14 @@ const initMobileMenuToggle = () => {
             
             const isExpanded = navList.classList.contains(OPEN_MOD);
             toggleButton.setAttribute('aria-expanded', isExpanded); 
-            
-            if (isExpanded) {
-                toggleIcon.classList.remove('fa-bars');// HAMBURGUESA
-                toggleIcon.classList.add('fa-times'); // X
-            } else {
-                toggleIcon.classList.remove('fa-times');
-                toggleIcon.classList.add('fa-bars'); 
-            }
+            //TODO volver aqui con esta importacion no funciona correctamente, aunque cambia el icono no actualiza el icono
+            // if (isExpanded) {
+            //     toggleIcon.classList.remove('fa-bars');// HAMBURGUESA
+            //     toggleIcon.classList.add('fa-minus'); // -
+            // } else {
+            //     toggleIcon.classList.remove('fa-minus');
+            //     toggleIcon.classList.add('fa-bars'); 
+            // }
         });
     }
 };

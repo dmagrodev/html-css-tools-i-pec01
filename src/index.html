@@ -6,19 +6,38 @@
     <link rel="stylesheet" href="./assets/styles/main.scss" />
 
   </head>
-  <body>
+  <body class="kioto-body">
      <include src="./views/partials/_header.html" id = "inicio"></include>
-        <h1>Hello, World!</h1>
-        <div class="iconos-ejemplo">
-          <i class="fas fa-coffee"></i>
-          
-          <i class="fas fa-home"></i>
-          
-          <i class="fas fa-map-marker-alt"></i>
-          <i class="fas fa-bars"></i> </button>
+        
+     <div id="inicio" class="kioto-container-portada">
+              <h1 class="kioto-title__text">Kioto 京都 </h1>
+              <h2 class="kioto-subtitle__text">Que ver y que hacer en Kioto</h2>
+              <div class="kioto-content-block kioto-content-block--centered">
+                <p class="kioto-content-block__paragraph u-text-justify">Kioto <b>(京都)</b> es una de las ciudades más visitadas de Japón y la estrella de la región de Kansai. 
+                    No es de extrañar, dada la historia que tiene y lo mucho que hay que ver y hacer. 
+                    Sin embargo, descubrir todos los rincones de la ciudad en unos pocos días puede ser un quebradero de cabeza. No sólo por falta de tiempo, 
+                    sino por la imposibilidad de saber qué podemos encontrar en cada zona de Kioto.
+                    </p>
+                <p class="kioto-content-block__paragraph u-text-justify">
+                    La ciudad de Kioto posee una cultura viva que se ha transmitido durante más de mil años. 
+                    Se puede sentir en cómo las calles, los kimonos, los santuarios y los templos nos hacen
+                    conscientes del cambio de las estaciones
+                </p> 
+                <p class="kioto-content-block__paragraph u-text-justify">
+                  Gracias a su larga historia, Kioto es un tesoro de lugares históricos. Hay 14 lugares declarados Patrimonio Cultural de la Humanidad
+                  dentro de los límites de la ciudad de Kioto y 3 más en localidades cercanas. Incluyen un elaborado castillo que atestigua el poder
+                  de los shogunes, y santuarios y templos históricos que albergan innumerables obras de arte preciosas. Muchos otros lugares son Tesoros Nacionales o Bienes Culturales Importantes.
+                </p>    
+              </div>
+          <div class="iconos-ejemplo kioto-container-text__text">
+            <i class="fas fa-coffee"></i>
+            <i class="fas fa-home"></i>
+            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-bars"></i> </button>
+            <p class="text-secondary">guion<i class="fas fa-minus"></i></p>
+          </div>
+      </div>
 
-          <p>guion<i class="fas fa-minus"></i></p>
-        </div>
      <include src="./views/partials/_footer.html" id = "inicio"></include>
   </body>
   <script type="module" src="./assets/scripts/main.js"></script>

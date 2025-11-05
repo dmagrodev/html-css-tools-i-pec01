@@ -1,0 +1,27 @@
+@use "../variables" as vars;
+@use "../utils/functions" as func;
+
+//Utilities
+.u-text--primary {
+    color: vars.$color-kioto-text;
+}
+
+.u-text--secondary {
+    color: vars.$color-kioto-secondary;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-justify {
+  text-align: justify;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-color-white{
+    color: vars.$color-white;
+}

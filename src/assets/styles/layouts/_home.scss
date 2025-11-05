@@ -1,8 +1,75 @@
 @use "../variables" as vars;
 @use "../utils/functions" as func;
 
-body {
-  height: 100vh;
-  color: #1f1f1f;
-  background: linear-gradient(to bottom, #bada55, #c0ffee);
+// body {
+//   height: 100vh;
+//   color: #1f1f1f;
+//   background: linear-gradient(to bottom, #bada55, #c0ffee);
+// }
+.kioto-body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0rem;
+    margin: 0;
+    font-family: vars.$font-family-sans-serif;
+    font-size: func.rem(16);
+    color: vars.$color-kioto-text;
+    background-color: vars.$color-kioto-bg;
+
+    @media (min-width: vars.$mq-min-width) {
+        max-width: none;
+        padding: 0.5rem;
+        padding-top: 0rem;
+    }
 }
+
+.kioto-container-portada {
+    max-width: 98vw;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: vars.$color-kioto-container;
+    border-radius: 1rem;
+    box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
+                0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);// añado Separación superior
+                transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.kioto-title__text{
+    padding-top: 2rem;
+    font-family: vars.$font-family-serif;
+    font-size: func.rem(24);
+    font-weight: 700;
+    color: vars.$color-kioto-title;
+    @media (min-width: vars.$mq-min-width) {
+        font-size: func.rem(36);
+    }
+}
+
+.kioto-subtitle__text{
+    padding-top: 0rem;
+    font-family: vars.$font-family-serif;
+    font-size: func.rem(24);
+    font-weight: 700;
+    color: vars.$color-kioto-subtitle;
+    @media (min-width: vars.$mq-min-width) {
+        font-size: func.rem(24);
+    }
+}
+
+
+.kioto-content-block {
+    padding: 1rem;
+}
+ 
+.kioto-content-block--centered{
+    max-width: 800;
+    margin: auto;
+}
+
+.kioto-content-block__paragraph{
+    line-height: 1.6;
+    
+}
+

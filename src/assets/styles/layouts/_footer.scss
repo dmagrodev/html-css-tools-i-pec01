@@ -1,0 +1,163 @@
+@use "../variables" as vars;
+@use "../utils/functions" as func;
+@use "sass:color";
+
+.main-footer {
+    display: block;
+    width: 100%; 
+    margin-top: func.rem(50);
+    padding: func.rem(5) 0; 
+    color: vars.$color-kioto-text;
+    background: linear-gradient(180deg, vars.$color-kioto-bg, 20%, vars.$color-kioto-bg-gradient, 80%)
+}
+
+.kioto-footer__container {
+    max-width: 100vw;
+    padding: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: vars.$color-kioto-container;
+    border-radius: 1rem;
+    box-shadow: func.rem(4) func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
+                func.rem(4) func.rem(8) func.rem(8) func.rem(-1) rgba(0, 0, 0, 0.1);// añado Separación superior
+                transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+    opacity:1; 
+}
+
+.kioto-footer__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: func.rem(30);
+    padding-top: func.rem(20);
+        
+    @media (min-width: vars.$mq-desktop-width) {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+}
+
+.kioto-footer__logo--img{
+    display: block;
+    align-items: center;
+    opacity: 0.5;
+    @media (min-width: vars.$mq-desktop-width) { 
+        display: none; 
+    }
+}
+
+ .kioto-footer__title {
+    padding-bottom: func.rem(5);
+    margin-top: 0;
+    margin-bottom: func.rem(10);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: vars.$color-kioto-text; 
+    border-bottom: func.rem(1) solid rgba(255, 255, 255, 0.3); 
+}
+
+.kioto-footer__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.kioto-footer__link {
+    display: inline-block;
+    line-height: 1.2;
+    color: vars.$color-Kioto-blue-link; 
+    text-decoration: none;
+    font-size: 1.5rem;     
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: vars.$color-kioto-secondary; 
+    }
+
+    @media (min-width: vars.$mq-desktop-width) { 
+        font-size: 1rem;     
+    }
+}
+
+.kioto-footer__text {
+    font-size: func.rem(24);
+    opacity: 0.8;
+    @media (min-width: vars.$mq-desktop-width) { 
+        font-size: 1rem;     
+    }
+}
+
+.kioto-footer-brand__container--centered{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1rem;
+    margin-top: 0;
+}
+
+.kioto-footer-brand__container--centered p {
+  margin: 0;
+  padding: 0;
+}
+
+.kioto-footer__brand-text--primary{
+    color: vars.$color-kioto-title;
+    font-size: func.rem(48);
+    font-weight: bold;
+
+    @media (min-width: vars.$mq-desktop-width) {
+        font-size: func.rem(36);
+    }
+    
+}
+
+.kioto-footer__horizontal-separator {
+    width:60%;
+    margin:auto;
+
+    @media (min-width: vars.$mq-desktop-width) {
+        display: none;
+    }
+}
+
+
+.kioto-footer__brand-text--secondary{
+    padding: func.rem(10) ;
+    color: vars.$color-kioto-secondary;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: vars.$color-kioto-title; 
+    }
+    
+    @media (min-width: vars.$mq-desktop-width) {
+        font-size: func.rem(24);
+    }
+}
+
+.kioto-footer__credits {
+    font-size: 1rem;
+    color: vars.$color-kioto-title;
+    opacity: 0.7;
+}
+
+.kioto-footer__text-legal{
+    font-size: func.rem(14);
+    line-height: 1.4;
+    @media (min-width: vars.$mq-desktop-width) {
+          font-size: func.rem(14);
+    }
+}
+
+.kioto-footer__credits-link {
+    color: vars.$color-kioto-title; 
+    text-decoration: underline;
+    line-height: 1.2;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        color: vars.$color-kioto-secondary;
+    }
+}
