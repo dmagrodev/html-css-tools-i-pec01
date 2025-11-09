@@ -194,6 +194,30 @@ const initMobileMenuToggle = () => {
     }
 };
 
+
+// -----------------------------------------------------------------//
+// TOGGLE para los containers
+// -----------------------------------------------------------------//
+const initCollapsibleContent = () => {
+    const toggleButtons = document.querySelectorAll('.cat-details-toggle-btn');
+    
+    toggleButtons.forEach(button => {
+        const contentId = button.getAttribute('aria-controls');
+        const contentElement = document.getElementById(contentId);
+        
+        if (contentElement) {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                button.setAttribute('aria-expanded', !isExpanded);
+                contentElement.classList.toggle('cat-details-collapsable');
+                contentElement.classList.toggle('cat-details-collapsable-is-open');
+            });
+        }
+    });
+};
+
+
 // -----------------------------------------------------------------//
 // INICIALIZACIÓN COMPONENTES
 // -----------------------------------------------------------------//
@@ -201,6 +225,7 @@ const initApp = () => {
 
     initMobileMenuToggle();
     initLightboxGallery(); 
+    initCollapsibleContent();
     const allSliders = document.querySelectorAll('.slider'); //Collect de todos los sliders de la pagina
     
     allSliders.forEach(sliderElement => {

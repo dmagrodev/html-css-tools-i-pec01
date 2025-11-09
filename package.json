@@ -9,12 +9,20 @@
   ],
   "source": "src/index.html",
   "scripts": {
-    "start": "npm-run-all clean parcel:dev ",
+    "start": "npm-run-all clean parcel:build parcel:serve ",
+    "parcel:serve": "parcel --target web",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm-run-all clean parcel:build",
     "parcel:dev": "parcel",
     "parcel:build": "parcel build",
     "clean": "rimraf dist .parcel-cache"
+  },
+  "targets": {
+    "web": {
+      "context": "browser",
+      "publicUrl": "./",
+      "source": "src/index.html"
+    }
   },
   "keywords": [],
   "author": "",
