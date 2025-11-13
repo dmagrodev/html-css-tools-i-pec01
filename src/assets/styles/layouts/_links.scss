@@ -4,3 +4,59 @@
 .links-section{
     padding: 2rem 0;
 }
+
+.links-table{
+    width: 100%;
+    margin: 2rem 0;
+    font-size: func.rem(24);
+    border-collapse: collapse;
+
+    th, td {
+        padding: 1rem;
+        vertical-align: middle;
+        text-align: left;
+        border-bottom: func.rem(1) solid #ddd;
+    }
+    th{
+        background-color: vars.$color-kioto-bg;
+        
+    }
+    
+    td a{
+        color: vars.$color-kioto-secondary;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: vars.$color-kioto-light-even;
+    }
+
+    @media(max-width: vars.$mq-desktop-width) {
+        .links-table {
+            display: block;
+            padding: 2em;
+        }
+
+        th{
+        display: none;
+        }
+        td{
+        display: block;
+        }
+        td::before {
+            font-weight: 600;
+            text-transform: capitalize;
+            content: attr(data-label) ": ";
+        }
+    }
+}
+
+.links__list{
+    padding: 0;
+    list-style: none;
+}
+
+

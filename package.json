@@ -9,13 +9,14 @@
   ],
   "source": "src/index.html",
   "scripts": {
-    "start": "npm-run-all clean parcel:build parcel:serve ",
+    "start": "npm-run-all clean parcel:dev ",
     "parcel:serve": "parcel --target web",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm-run-all clean parcel:build",
     "parcel:dev": "parcel",
     "parcel:build": "parcel build",
-    "clean": "rimraf dist .parcel-cache"
+    "clean": "rimraf dist .parcel-cache",
+    "stylelint": "stylelint src/**/*.scss"
   },
   "targets": {
     "web": {

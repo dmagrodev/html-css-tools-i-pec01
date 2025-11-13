@@ -8,6 +8,7 @@
    "unit-disallowed-list": ["px"],
    "selector-max-compound-selectors": 3,
    "selector-max-id": 0,
-   "declaration-no-important": true
+   "declaration-no-important": true,
+   "no-duplicate-selectors": true
  }
 }

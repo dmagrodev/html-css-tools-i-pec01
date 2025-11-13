@@ -28,11 +28,7 @@
     background-color: vars.$color-kioto-container;
     border-radius: 1rem;
     box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
-                0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);// añado Separación superior
-            
-    @media (min-width: vars.$mq-min-width) {
-
-    }
+                0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);            
 }
 
 .kioto-title__text{
@@ -73,13 +69,15 @@
 }
 
 .imperdible{
-    text-align: justify;
-    color: vars.$color-kioto-text;
-    background-color: vars.$color-imperdible;
-    border-radius: 1rem;
     padding: 1rem;
     margin-top: 4rem;
     margin-bottom: 2rem;
+    line-height: 1.6;
+    
+    color: vars.$color-kioto-text;
+    text-align: justify;
+    background-color: vars.$color-imperdible;
+    border-radius: 1rem;
 }
 
 .kioto-two-column-container {
@@ -100,29 +98,29 @@
     }
 }
 
-.kioto-two-column-container__content{
-    text-align: justify; 
-    padding: 3rem;
-    margin-left: auto; 
+.kioto-two-column-container__content{ 
+    padding: 3rem; 
     margin-right: auto;
+    margin-left: auto;
     font-size: func.rem(18);
     line-height: 1.6;
-     @media (min-width: vars.$mq-desktop-width) { 
-        text-align: justify;
-        margin: auto;
-        padding: 1rem;
+    text-align: justify;
+     @media (min-width: vars.$mq-desktop-width) {
         max-width: func.rem(450);
+        padding: 1rem;
+        margin: auto; 
+        text-align: justify;
     }
 }
 
 .kioto-two-col-container__image {
     align-items: center;
     width: 100%;
+    max-width: 450;
     height: auto;
+    background-color: vars.$color-kioto-bg-gradient;
     border-radius: func.rem(8);
     box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
-    background-color: vars.$color-kioto-bg-gradient;
-    max-width: 450;
 
     @media (max-width: vars.$mq-desktop-width) { 
         //text-align: center;
@@ -144,7 +142,7 @@
 }
 
 .kioto-two-column-container__title{
-    font-size: 40px;
+    font-size: func.rem(40);
     font-weight: 600;
     @media (min-width: vars.$mq-desktop-width) { 
         font-size: 1.5rem; 
@@ -159,9 +157,9 @@
     max-width: func.rem(600);
     padding: func.rem(10);
     margin: func.rem(10) auto;
+    font-size: func.rem(24);
     text-align: left;
     list-style-type: disc;
-    font-size: func.rem(24);
 }
 
 .kioto__orderedlist {
@@ -178,7 +176,7 @@
     color: vars.$color-kioto-text;
 }
 
-.kioto-two-column-container_img-item {
+.kioto-two-column-container__img-item {
   width: 100%;
   height: auto;
   border-radius: func.rem(15);
@@ -188,276 +186,6 @@
     &:hover {
         box-shadow: 0 func.rem(8) func.rem(16) rgba(0, 0, 0, 0.2);
         transform: translateY(func.rem(-5)) scale(1.02) 
-    }
-}
-
-
-//CATEGORIES!!!!
-.cat_main-grid {
-   display: block;
-
-    @media (min-width: vars.$mq-desktop-width) { 
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        gap: func.rem(16);
-        align-items: start;
-    }
-          
-}
-
-.cat-card__side-menu{
-    height: auto;
-    background-color: vars.$color-kioto-container; 
-    border-radius: 0.5rem;  
-    box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
-                0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);// añado Separación superior
-    font-size: 2rem;   
-    @media (min-width: vars.$mq-desktop-width) { 
-        height: auto;
-        position: sticky;
-        top: func.rem(200);
-        align-self: start;
-        z-index: 1000;
-        margin-top: 2rem;
-        font-size: 1rem;
-
-    }
-
-}
-
-.cat-menu__link{
-    color: vars.$color-kioto-text;
-    text-decoration: none; 
-    transition: color 0.3s ease;
-    font-size: 2rem;
-    margin: 20px;
-    &:hover {
-        color: vars.$color-kioto-secondary; 
-    }
-    
-    &:active {
-        color: vars.$color-kioto-secondary; 
-    }
-    
-    @media (min-width: vars.$mq-desktop-width) {
-        font-size: 1.2rem;
-    }
-
-}
-
-.cat-content{
-    width: 100%;
-    padding:0px;
-}
-
-.cat-right-column__content {
-    display: flex;
-    flex-direction: column;
-    gap: func.rem(30);
-    background-color: vars.$color-kioto-bg;
-
-    @media (min-width: vars.$mq-desktop-width) { 
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        font-size: 1rem; 
-        max-width: auto;
-    }
-}
-
-.cat-card{
-    position: relative;
-    padding: func.rem(10);
-    background-color: vars.$color-kioto-container;
-    border-radius: func.rem(2);
-    box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
-
-}
-
-
-.cat-card__header{
-    display: flex;
-    align-items: center;
-    padding: func.rem(10) func.rem(10);
-    
-
-}
-
-.cat-card__title-text{ 
-     color: vars.$color-kioto-title;
-     font-size: func.rem(42);
-     @media (min-width: vars.$mq-desktop-width) { 
-        font-size: func.rem(16);
-    }
-}
-
-.cat-card__image{
-    width: 100%;
-    object-fit: cover;
-    border-radius: func.rem(5);
-    box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-
-    &:hover {
-        box-shadow: 0 func.rem(8) func.rem(16) rgba(0, 0, 0, 0.2);
-        transform: translateY(func.rem(-5)) scale(1.02) 
-    }
-    @media (min-width: vars.$mq-desktop-width) { 
-        height: func.rem(250);
-        width: 100%;
-    }
-}
-
-.cat-card__text{
-    font-size: func.rem(24);
-    line-height: 1.6;
-    color: vars.$color-kioto-text;
-    @media (min-width: vars.$mq-desktop-width) { 
-        font-size: func.rem(14);
-    }
-}
-
-.cat-card__link{
-    color: vars.$color-kioto-title;
-    font-size: func.rem(42);
-    text-decoration: none; 
-    transition: color 0.3s ease;
-
-    &:hover {
-        color: vars.$color-kioto-secondary; 
-    }
-    
-    &:active {
-        color: vars.$color-kioto-secondary; 
-    }
-    
-    @media (min-width: vars.$mq-desktop-width) {
-        font-size: func.rem(16);
-    }
-}
-
-
-.cat-menu__list{
-    list-style: none;
-    display: block;
-    padding: 1rem 1rem;
-
-    :hover{
-        background-color: vars.$color-kioto-light-bg;
-    }
-
-}
-
-.cat-menu__item{
-    padding: func.rem(15);
-    line-height: 1.6;
-    font-weight: 600;
-}
-
-.cat-details__content{
-    visibility:hidden;
-
-}
-//aqui añadiremos en el contenedor, el boton para minimizar el tamaño de label mosterando el boton y el title
-//
-
-.cat-details-collapsable {
-    position: relative;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.cat-details-collapsable-is-open{
-    max-height: 500px; 
-    opacity: 1;
-    padding-left: 1rem;
-    padding-right: 1rem;
-        transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-
-}
-
-.cat-details-toggle-btn {
-
-    position: relative;
-    z-index: 2000; 
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    width: func.rem(40);
-    height: func.rem(40);
-    margin-top: func.rem(0);
-    margin-right: func.rem(10);
-    font-weight: 600;
-    color: vars.$color-kioto-container;
-    cursor: pointer;
-    background-color:rgba(255, 81, 81, 0.4);
-    border: func.rem(1) solid rgba(255, 162, 162, 0.6);
-    border-radius: func.rem(50);
-    box-shadow: 0 func.rem(1) func.rem(4) rgba(255, 81, 81, 0.3);
-    transition: background-color 0.2s;
-
-    &:hover {
-        background-color: vars.$color-kioto-secondary;
-    }
-
-    &__icon {
-        display: block;
-        font-size: func.rem(20);
-        font-weight: bold;
-        line-height: 1;
-        color: vars.$color-white;
-        transition: transform 0.3s ease; 
-         @media (min-width: vars.$mq-desktop-width) {
-      
-            font-size: func.rem(20);
-         }
-    }
-
-    @media (min-width: vars.$mq-desktop-width) {
-        width: func.rem(20);
-        height: func.rem(20);
-        
-    }
-}
-
-//agrupacion para el title y el contenido 3 columnas, añado una seccion
-
-.cat-grid-group {
-    padding-bottom: func.rem(20);
-}
-
-
-.cat-grid-group__title {
-    font-size: func.rem(42);
-    font-weight: 700;
-    color: vars.$color-kioto-container;
-    text-shadow: 
-        0 0 func.rem(5) rgba(0, 0, 0, 0.5),
-        0 0 func.rem(1) rgba(0, 0, 0, 0.8); 
-    margin-bottom: func.rem(10);
-    padding-left: func.rem(10);
-    @media (min-width: vars.$mq-desktop-width) { 
-        font-size: func.rem(32);
-    }
-}
-
-.cat-grid-group__content {
-    display: flex;
-    flex-direction: column;
-    gap: func.rem(16);
-    margin-top: func.rem(15);
-
-    @media (min-width: vars.$mq-desktop-width) { 
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-        align-items: start;
-        font-size: 1rem;
-        grid-gap: func.rem(16);
     }
 }
 

@@ -4,9 +4,9 @@
 
 .main-footer {
     display: block;
-    width: 100%; 
-    margin-top: func.rem(50);
+    width: 100%;
     padding: func.rem(5) 0; 
+    margin-top: func.rem(50); 
     color: vars.$color-kioto-text;
     background: linear-gradient(180deg, vars.$color-kioto-bg, 20%, vars.$color-kioto-bg-gradient, 80%)
 }
@@ -19,9 +19,9 @@
     background-color: vars.$color-kioto-container;
     border-radius: 1rem;
     box-shadow: func.rem(4) func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
-                func.rem(4) func.rem(8) func.rem(8) func.rem(-1) rgba(0, 0, 0, 0.1);// añado Separación superior
-                transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-    opacity:1; 
+                func.rem(4) func.rem(8) func.rem(8) func.rem(-1) rgba(0, 0, 0, 0.1);
+    opacity:1;
+                transition: max-height 0.4s ease-out, opacity 0.4s ease-out; 
 }
 
 .kioto-footer__content {
@@ -62,10 +62,10 @@
 
 .kioto-footer__link {
     display: inline-block;
+    font-size: 1.5rem;
     line-height: 1.2;
-    color: vars.$color-Kioto-blue-link; 
-    text-decoration: none;
-    font-size: 1.5rem;     
+    color: vars.$color-kioto-blue-link; 
+    text-decoration: none;     
     transition: color 0.3s ease;
 
     &:hover {
@@ -88,21 +88,21 @@
 .kioto-footer-brand__container--centered{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
     gap: 1rem;
+    align-items: baseline;
+    justify-content: center;
     margin-top: 0;
 }
 
 .kioto-footer-brand__container--centered p {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .kioto-footer__brand-text--primary{
-    color: vars.$color-kioto-title;
     font-size: func.rem(48);
     font-weight: bold;
+    color: vars.$color-kioto-title;
 
     @media (min-width: vars.$mq-desktop-width) {
         font-size: func.rem(36);
@@ -122,9 +122,9 @@
 
 .kioto-footer__brand-text--secondary{
     padding: func.rem(10) ;
-    color: vars.$color-kioto-secondary;
     font-size: 2rem;
     font-weight: bold;
+    color: vars.$color-kioto-secondary;
     transition: color 0.3s ease-in-out;
 
     &:hover {
@@ -151,9 +151,9 @@
 }
 
 .kioto-footer__credits-link {
+    line-height: 1.2;
     color: vars.$color-kioto-title; 
     text-decoration: underline;
-    line-height: 1.2;
     &:link,
     &:visited,
     &:hover,

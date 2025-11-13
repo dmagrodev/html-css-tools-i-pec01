@@ -2,56 +2,57 @@
 @use "../utils/functions" as func;
 
 //Utilities
-.u-text--primary {
+.utext--primary {
     color: vars.$color-kioto-text;
 }
 
-.u-text--secondary {
-    color: vars.$color-kioto-secondary;
-}
-.u-text--secondary {
+.utext--secondary {
     color: vars.$color-kioto-secondary;
 }
 
-.u-text--subtitle {
+.utext--subtitle {
     color: vars.$color-kioto-subtitle;
 }
 
-.u-text--title {
+.utext--title {
     color: vars.$color-kioto-title;
 }
 
-.u-text-center {
+.utext--center {
   text-align: center;
 }
 
-.u-text-justify {
+.utext--justify {
   text-align: justify;
 }
 
-.u-text-right {
+.utext--right {
   text-align: right;
 }
 
-.u-color-white{
+.ucolor--white{
     color: vars.$color-white;
 }
 
-.u-separator-horizontal {
+.useparator--horizontal {
     width:70%;
     margin:auto;
 }
 
-.u-img--large {
+.uimg--large {
   width: 100%;
   height: auto;
   border-radius: func.rem(15);
   box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
 }
 
-.u-img--rounded {
-    border-radius: 50%;
+.uimg--rounded {
     float: left;
     padding-right: 1.5rem;
+    border-radius: 50%;
     shape-outside: circle();
+}
+
+.is-disabled{
+    pointer-events: none;
 }

@@ -38,8 +38,7 @@ class imageSlider {
     }
 
     
-    // Mover slider a una posicion
-    // calculo del desplazamiento es acumulativo, se toma en cuenta el tamaño de la imagen
+
     moveToSlide(index) {
         if (index < 0) {
             index = this.totalSlides - 1; 
@@ -182,7 +181,7 @@ const initMobileMenuToggle = () => {
             
             const isExpanded = navList.classList.contains(OPEN_MOD);
             toggleButton.setAttribute('aria-expanded', isExpanded); 
-            //TODO volver aqui con esta importacion no funciona correctamente, aunque cambia el icono no actualiza el icono en imagen, parece qun problema con fontawesome
+            //TODO volver aqui con esta importacion no funciona correctamente, aunque cambia el icono no actualiza el icono en imagen, parece qun problema con fontawesome y el dom
             // if (isExpanded) {
             //     toggleIcon.classList.remove('fa-bars');// HAMBURGUESA
             //     toggleIcon.classList.add('fa-minus'); // -
@@ -196,7 +195,7 @@ const initMobileMenuToggle = () => {
 
 
 // -----------------------------------------------------------------//
-// TOGGLE para los containers
+// COLLAPSABLE CONTENT para los containers
 // -----------------------------------------------------------------//
 const initCollapsibleContent = () => {
     const toggleButtons = document.querySelectorAll('.cat-details-toggle-btn');

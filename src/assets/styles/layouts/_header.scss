@@ -20,8 +20,8 @@
     display: flex; 
     align-items: center;
     justify-content: space-between;
-    padding-left: func.rem(20);
     padding-right: func.rem(20);
+    padding-left: func.rem(20);
 
     @media (min-width: vars.$mq-desktop-width) {
         flex-wrap: wrap ; // por si en algun momento no toma bien el tamaño en vista escritorio
@@ -52,9 +52,9 @@
 }
 
 .title__text--primary{
-    color: vars.$color-kioto-title;
     font-size: func.rem(48);
     font-weight: bold;
+    color: vars.$color-kioto-title;
 
     @media (min-width: vars.$mq-desktop-width) {
         font-size: func.rem(36);
@@ -64,9 +64,9 @@
 
 .title__text--secondary{
     padding: func.rem(10) ;
-    color: vars.$color-kioto-secondary;
     font-size: func.rem(36);
     font-weight: bold;
+    color: vars.$color-kioto-secondary;
     transition: color 0.3s ease-in-out;
 
     &:hover {
@@ -82,16 +82,16 @@
     width: func.rem(100); 
     font-size: func.rem(24);
     font-weight: bold;
-    color: vars.$color-Kioto-blue;
+    color: vars.$color-kioto-blue;
     text-decoration: none;
     border-radius: 50%;
+            box-shadow: 0 0 0 transparent;          //pruebas de transicion y destello
     transition: 
-            box-shadow 0.4s ease-in-out,   //pruebas de transicion y destello
-            transform 0.4s ease-in-out;    //pruebas de transicion y destello
-    box-shadow: 0 0 0 transparent;          //pruebas de transicion y destello
+            box-shadow 0.4s ease-in-out,            //pruebas de transicion y destello
+            transform 0.4s ease-in-out;             //pruebas de transicion y destello
     &:hover {//todo no me convence esta idea
-        box-shadow: 0 0 1px vars.$color-kioto-secondary, 
-                    0 0 30px rgba(vars.$color-kioto-secondary, 0.5); 
+        box-shadow: 0 0 func.rem(1) vars.$color-kioto-secondary, 
+                    0 0 func.rem(30) rgba(vars.$color-kioto-secondary, 0.5); 
     }
 }
 
@@ -99,7 +99,7 @@
     display: block; 
     padding: 1rem;
     font-size: func.rem(50);
-    color: vars.$color-Kioto-blue;
+    color: vars.$color-kioto-blue;
     cursor: pointer; 
     background: none;
     border: none;
@@ -137,8 +137,8 @@
 
 .main-nav__list--is-open {
     display: flex;
-    border-radius: 5px 5px 10px 10px;
-    margin-top: 5px;
+    margin-top: func.rem(5);
+    border-radius: func.rem(5) func.rem(5) func.rem(10) func.rem(10);
     @media (min-width: vars.$mq-desktop-width) {
         display: flex; 
     }
@@ -147,10 +147,10 @@
 .main-nav__item {
     position: relative;
     width: 100%;
-    border-bottom: func.rem(1) solid vars.$color-Kioto-grey-light;
-    font-size: func.rem(18);
     font-family: vars.$font-family-sans-serif;
+    font-size: func.rem(18);
     font-weight: 600;
+    border-bottom: func.rem(1) solid vars.$color-kioto-grey-light;
     &::after {
         content: none;
     }
@@ -165,7 +165,7 @@
             top: 50%;
             right: 0; 
             font-size: func.rem(24);
-            color: vars.$color-Kioto-grey-light;
+            color: vars.$color-kioto-grey-light;
             content: '|'; 
             transform: translateY(-50%); 
         }
@@ -175,10 +175,10 @@
 .main-nav__link {
     display: block;
     padding: 0.75rem 1rem;
+    font-size: 2rem;
     color: vars.$color-kioto-text;
     text-decoration: none; 
     transition: color 0.3s ease;
-    font-size: 2rem;
 
     &:hover {
         color: vars.$color-kioto-secondary; 

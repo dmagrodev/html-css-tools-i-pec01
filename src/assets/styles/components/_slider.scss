@@ -6,14 +6,14 @@
 /* ---------------------------------- */
 
 
-.slider-section { 
-    padding-left: func.rem(10); 
-    padding-right: func.rem(10);
-    margin-bottom: func.rem(40);
-    height: auto;
-    max-width: 900px;
-    margin-left: auto;
+.slider-section {
+    max-width: func.rem(900);
+    height: auto; 
+    padding-right: func.rem(10); 
+    padding-left: func.rem(10);
     margin-right: auto;
+    margin-bottom: func.rem(40);
+    margin-left: auto;
 }
 
 .slider {
