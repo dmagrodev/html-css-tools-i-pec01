@@ -79,7 +79,7 @@
 }
 
 .main-nav__logo {
-    width: func.rem(150); 
+    width: func.rem(200); 
     font-size: func.rem(24);
     font-weight: bold;
     color: vars.$color-kioto-blue;
@@ -92,6 +92,9 @@
     &:hover {//todo no me convence esta idea
         box-shadow: 0 0 func.rem(1) vars.$color-kioto-secondary, 
                     0 0 func.rem(30) rgba(vars.$color-kioto-secondary, 0.5); 
+    }
+        @media (min-width: vars.$mq-desktop-width) {
+        width: func.rem(100); 
     }
 }
 
