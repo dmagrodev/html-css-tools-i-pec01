@@ -46,12 +46,12 @@
   box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
 }
 
-.uimg--rounded {
-    float: left;
-    padding-right: 1.5rem;
-    border-radius: 50%;
-    shape-outside: circle();
-}
+// .uimg--rounded {
+//     float: left;
+//     padding-right: 1.5rem;
+//     border-radius: 50%;
+//     shape-outside: circle();
+// }
 
 .is-disabled{
     pointer-events: none;
