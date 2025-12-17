@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIOTO Travel</title>
     <link rel="stylesheet" href="./assets/styles/main.scss" />
 
@@ -16,13 +17,37 @@
                 <div class="slider">
                     <div class="slider__track">
                         <div class="slider__slide slider__slide--active">
-                            <img src="./assets/resources/images/Fushimi_inari_tori.jpg" alt="Fushimi Inari, torii" class="slider__image gallery__image">
+                            <picture>
+                              <source media="(min-width: 768px)" srcset="./assets/resources/images/Fushimi_inari_tori.jpg?as=webp 1200w" 
+                                      sizes="100vw" type="image/webp" />
+                              <source media="(max-width: 768px)" srcset="./assets/resources/images/Fushimi_inari_tori-crop.jpg?as=webp 800w" 
+                                    sizes="100vw" type="image/webp" />
+                              <img src="./assets/resources/images/Fushimi_inari_tori.jpg" alt="Fushimi Inari, torii" class="slider__image gallery__image" tabindex="0" 
+                                  role="button" 
+                                  aria-label="Ver imagen en tamaño completo">
+                            </picture>
+                          </div>
+                        <div class="slider__slide ">
+                            <picture>
+                              <source media="(min-width: 768px)" srcset="./assets/resources/images/fushimi-inari-inari.jpg?as=webp 1200w" 
+                                      sizes="100vw" type="image/webp" />
+                              <source media="(max-width: 767px)" srcset="./assets/resources/images/fushimi-inari-inari-crop.jpg?as=webp 800w" 
+                                    sizes="100vw" type="image/webp" />
+                              <img src="./assets/resources/images/fushimi-inari-inari.jpg" alt="Fushimi Inari, Inari" class="slider__image gallery__image" loading="lazy" tabindex="0" 
+                                  role="button" 
+                                  aria-label="Ver imagen en tamaño completo">
+                            </picture>
                         </div>
                         <div class="slider__slide ">
-                            <img src="./assets/resources/images/fushimi-inari-inari.jpg" alt="Fushimi Inari, Inari" class="slider__image gallery__image">
-                        </div>
-                        <div class="slider__slide ">
-                            <img src="./assets/resources/images/fushimi-inari-temple.jpg" alt="Fushimi Inari, Honden" class="slider__image gallery__image">
+                          <picture>
+                            <source media="(min-width: 768px)" srcset="./assets/resources/images/fushimi-inari-temple.jpg?as=webp 1200w" 
+                                    sizes="100vw" type="image/webp" />
+                            <source media="(max-width: 767px)" srcset="./assets/resources/images/fushimi-inari-temple-crop.jpg?as=webp 800w" 
+                                  sizes="100vw" type="image/webp" />
+                            <img src="./assets/resources/images/fushimi-inari-temple.jpg" alt="Fushimi Inari, Honden" class="slider__image gallery__image" loading="lazy" tabindex="0" 
+                                  role="button" 
+                                  aria-label="Ver imagen en tamaño completo">
+                        </picture>
                         </div>
                       </div>
                       <button class="slider__btn slider__btn--prev" aria-label="Foto anterior">
@@ -61,12 +86,42 @@
                         </p>
                     </div>
                     <div class="kioto-two-col-container__img">
-                        <img class="kioto-two-column-container__img-item gallery__image" src="./assets/resources/images/fushimi-inari-temple.jpg" alt="Fushimi Inari Honden" class="gallery__image">
+                        <picture>
+                          <source media="(min-width: 768px)" srcset="./assets/resources/images/fushimi-inari-temple.jpg?as=webp 1200w" 
+                                  sizes="100vw" type="image/webp" />
+                          <source media="(max-width: 768px)" srcset="./assets/resources/images/fushimi-inari-temple-crop.jpg?as=webp 800w" 
+                                sizes="100vw" type="image/webp" />
+                          <img class="kioto-two-column-container__img-item gallery__image" src="./assets/resources/images/fushimi-inari-temple.jpg" alt="Fushimi Inari Honden" class="gallery__image" loading="lazy" tabindex="0" 
+                              role="button" 
+                              aria-label="Ver imagen en tamaño completo">
+                        </picture>
                     </div>
                 </div>
+              <hr class="useparator--horizontal">
                 <div class="kioto-two-column-container">
                     <div class="kioto-two-col-container__img">
-                        <img class="kioto-two-column-container__img-item gallery__image" src="./assets/resources/images/Fushimi_inari_tori.jpg" alt="Fushimi Inari Torii" class="gallery__image">
+                      <picture>
+                        <source media="(min-width: 768px)" 
+                                srcset="./assets/resources/images/Fushimi_inari_tori.jpg?as=avif 1200w" 
+                                sizes="100vw" type="image/avif" />
+                        <source media="(max-width: 767px)" 
+                                srcset="./assets/resources/images/Fushimi_inari_tori-crop.jpg?as=avif 800w" 
+                                sizes="100vw" type="image/avif" />
+
+                        <source media="(min-width: 768px)" 
+                                srcset="./assets/resources/images/Fushimi_inari_tori.jpg?as=webp 1200w" 
+                                sizes="100vw" type="image/webp" />
+                        <source media="(max-width: 768px)" 
+                                srcset="./assets/resources/images/Fushimi_inari_tori-crop.jpg?as=webp 800w" 
+                                sizes="100vw" type="image/webp" />
+                              
+                        <img class="kioto-two-column-container__img-item gallery__image" 
+                              src="./assets/resources/images/Fushimi_inari_tori.jpg" 
+                              alt="Fushimi Inari Torii" class="gallery__image" 
+                              loading="lazy" tabindex="0" 
+                              role="button" 
+                              aria-label="Ver imagen en tamaño completo">
+                      </picture>
                     </div>
 
                     <div class="kioto-two-column-container__content">
@@ -78,7 +133,7 @@
                             La caminata hasta la cima de la montaña y de regreso dura entre 2 y 3 horas; 
                             sin embargo, los visitantes pueden caminar hasta donde deseen antes de regresar. 
 
-                            <span class="utext--secondary">Recomendacion</span>
+                          </p><span class="utext--secondary">Recomendacion</span>
                           <p class="kioto-content-block__paragraph utext--justify">
                             Tras una ascensión de unos 30-45 minutos, llegaremos a la interseccion de <span class="utext--secondary">Yotsutsuji</span> aproximadamente mitad de la montaña.
                             Desde aqui se tienen unas bonitas vistas y puede ser un buen momento para retornar.
@@ -94,7 +149,8 @@
   
                   <div class="kioto-two-col-container__map">
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39724.490923289646!2d135.7430105093234!3d34.96730151325743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60010f153d2e6d21%3A0x7b1aca1c753ae2e9!2sFushimi%20Inari-taisha!5e1!3m2!1ses!2ses!4v1762713299000!5m2!1ses!2ses" 
-                        width="600" height="450" style="border:0;" 
+                        style="border:0;" 
+                        aria-label="google maps fushimi inari"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                       </iframe>
 
@@ -118,8 +174,9 @@
               <hr class="useparator--horizontal">
                 <div class="kioto-content-block kioto-content-block--centered">
                     <p class="kioto-two-column-container__title utext--title">Un paseo por Fushimi Inari.</p>
-                        <iframe style="border: none;" width="900" height="520" src="https://www.youtube.com/embed/QSoZJC8gLJM?si=7tqauGJ_jN0GIV2E" 
+                        <iframe style="border: none;" src="https://www.youtube.com/embed/QSoZJC8gLJM?si=7tqauGJ_jN0GIV2E" 
                           title="YouTube video player" 
+                          aria-label="Vídeo promocional de fushimi Inari"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 

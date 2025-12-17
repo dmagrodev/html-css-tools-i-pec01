@@ -6,15 +6,15 @@
     display: block;
     width: 100%;
     padding: func.rem(5) 0; 
-    margin-top: func.rem(50); 
+    margin-top: auto; 
     color: vars.$color-kioto-text;
     background: linear-gradient(180deg, vars.$color-kioto-bg, 20%, vars.$color-kioto-bg-gradient, 80%)
 }
 
 .kioto-footer__container {
     max-width: 100vw;
-    padding: 2rem;
     margin-top: 1rem;
+    padding: 1rem;
     text-align: center;
     background-color: vars.$color-kioto-container;
     border-radius: 1rem;
@@ -39,6 +39,18 @@
     display: block;
     align-items: center;
     opacity: 0.5;
+    margin: auto;
+    max-width: func.rem(300);
+    img {
+        display: block;
+        max-width: 100%; // <--- CRÍTICO: Asegura que la imagen no exceda 100% de su padre (120 rem)
+        height: auto;
+        animation: 
+                logo-pulse 
+                3s          /* Duración: 3 segundos por ciclo */
+                ease-in-out 
+                infinite;
+    }
     @media (min-width: vars.$mq-desktop-width) { 
         display: none; 
     }
@@ -48,7 +60,7 @@
     padding-bottom: func.rem(5);
     margin-top: 0;
     margin-bottom: func.rem(10);
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: vars.$color-kioto-text; 
     border-bottom: func.rem(1) solid rgba(255, 255, 255, 0.3); 
@@ -62,7 +74,7 @@
 
 .kioto-footer__link {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.2;
     color: vars.$color-kioto-blue-link; 
     text-decoration: none;     
@@ -78,7 +90,7 @@
 }
 
 .kioto-footer__text {
-    font-size: func.rem(24);
+    font-size: func.rem(14);
     opacity: 0.8;
     @media (min-width: vars.$mq-desktop-width) { 
         font-size: 1rem;     
@@ -88,7 +100,7 @@
 .kioto-footer-brand__container--centered{
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: baseline;
     justify-content: center;
     margin-top: 0;
@@ -100,12 +112,12 @@
 }
 
 .kioto-footer__brand-text--primary{
-    font-size: func.rem(48);
+    font-size: func.rem(26);
     font-weight: bold;
     color: vars.$color-kioto-title;
 
     @media (min-width: vars.$mq-desktop-width) {
-        font-size: func.rem(36);
+        font-size: func.rem(26);
     }
     
 }
@@ -121,8 +133,8 @@
 
 
 .kioto-footer__brand-text--secondary{
-    padding: func.rem(10) ;
-    font-size: 2rem;
+    padding: func.rem(01) ;
+    font-size: func.rem(24);
     font-weight: bold;
     color: vars.$color-kioto-secondary;
     transition: color 0.3s ease-in-out;

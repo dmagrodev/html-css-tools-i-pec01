@@ -3,7 +3,7 @@
 
 .cat-main-grid {
    display: block;
-
+max-width: 99vw;
     @media (min-width: vars.$mq-desktop-width) { 
         display: grid;
         grid-template-columns: 1fr 3fr;
@@ -19,14 +19,15 @@
     background-color: vars.$color-kioto-container; 
     border-radius: 0.5rem;  
     box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
-                0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);   
+                0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);  
+    clip-path: vars.$clip-path-octogon;
     @media (min-width: vars.$mq-desktop-width) {
         position: sticky;
-        top: func.rem(200);
+
         z-index: 1000;
         align-self: start; 
         height: auto;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
         font-size: 1rem;
 
     }
@@ -34,8 +35,9 @@
 }
 
 .cat-menu__link{
-    margin: func.rem(20);
-    font-size: 2rem;
+    display: block;
+    margin: func.rem(12);
+    font-size: 1.1rem;
     color: vars.$color-kioto-text;
     text-decoration: none; 
     transition: color 0.3s ease;
@@ -48,7 +50,7 @@
     }
     
     @media (min-width: vars.$mq-desktop-width) {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
 }
@@ -109,11 +111,8 @@
 }
 
 .cat-card__title-text{
-     font-size: func.rem(42); 
+     font-size: clamp(1rem, 1vw, 1.5rem);
      color: vars.$color-kioto-title;
-     @media (min-width: vars.$mq-desktop-width) { 
-        font-size: func.rem(16);
-    }
 }
 
 .cat-card__image{
@@ -123,6 +122,13 @@
     box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 
+    mask-image: linear-gradient(
+        to bottom right, 
+        transparent 0%,    // Esquina Superior Izquierda (Transparente)
+        black 30%,         // Comienza a ser visible
+        black 80%,         // La mayor parte de la imagen es visible (negro = visible)
+        transparent 100%   // Esquina Inferior Derecha (Transparente)
+    );
     &:hover {
         box-shadow: 0 func.rem(8) func.rem(16) rgba(0, 0, 0, 0.2);
         transform: translateY(func.rem(-5)) scale(1.02) 
@@ -134,7 +140,7 @@
 }
 
 .cat-card__text{
-    font-size: func.rem(32);
+    font-size: func.rem(14);
     line-height: 1.6;
     color: vars.$color-kioto-text;
     @media (min-width: vars.$mq-desktop-width) { 
@@ -143,7 +149,7 @@
 }
 
 .cat-card__link{
-    font-size: func.rem(42);
+    font-size: func.rem(20);
     color: vars.$color-kioto-title;
     text-decoration: none; 
     transition: color 0.3s ease;
@@ -191,8 +197,8 @@
     display: flex;
     align-items: center; 
     justify-content: center; 
-    width: func.rem(40);
-    height: func.rem(40);
+    width: func.rem(30);
+    height: func.rem(30);
     margin-top: func.rem(0);
     margin-right: func.rem(10);
     font-weight: 600;
@@ -236,13 +242,13 @@
 .cat-grid-group__title {
     padding-left: func.rem(10); 
     margin-bottom: func.rem(10);
-    font-size: func.rem(42);
+    font-size: func.rem(30);
     font-weight: 700;
     color: vars.$color-kioto-container;
     text-shadow: 0 0 func.rem(5) rgba(0, 0, 0, 0.5),
                  0 0 func.rem(1) rgba(0, 0, 0, 0.8);
     @media (min-width: vars.$mq-desktop-width) { 
-        font-size: func.rem(32);
+        font-size: func.rem(30);
     }
 }
 

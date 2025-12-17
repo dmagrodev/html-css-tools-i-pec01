@@ -63,7 +63,7 @@ class imageSlider {
     }
     
     prevSlide = () => {
-        this.moveToSlide(this.currentIndex - 1);
+        this.moveToSlide(this.currentIndex - 1);gallery__image
     }
 
     startAutoAdvance() {
@@ -81,6 +81,9 @@ class imageSlider {
             const dot = document.createElement('span');
             dot.classList.add('slider__dot');
             dot.classList.toggle('slider__dot--active', index === this.currentIndex);
+            dot.setAttribute('role', 'button'); 
+            dot.setAttribute('tabindex', '0');  
+            dot.setAttribute('aria-label', `Ir a la diapositiva ${index + 1}`);
             dot.addEventListener('click', () => {
                 this.stopAutoAdvance();
                 this.moveToSlide(index);
@@ -121,14 +124,14 @@ class imageSlider {
 
 
 // -----------------------------------------------------------------//
-// LIGHTBOX para Galeria
+// LIGHTBOX para Galeria (Usando srcset como fuente de URL hasheada)
 // -----------------------------------------------------------------//
 const initLightboxGallery = () => {
-    const galleryImages = document.querySelectorAll('.gallery__image'); // todo darle otro nombre mas significativo, se amplio para que funcione con cualquier imagen
+    const galleryImages = document.querySelectorAll('.gallery__image'); 
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const closeBtn = document.querySelector('.lightbox__close-btn');
-    
+
     const openLightbox = (imageSrc) => {
         lightboxImage.src = imageSrc;
         lightbox.classList.add('is-open');
@@ -142,9 +145,40 @@ const initLightboxGallery = () => {
 
     galleryImages.forEach(image => {
         image.addEventListener('click', () => {
-            const fullUrl = image.getAttribute('src'); 
+            // 1. Encontrar el contenedor <picture> y la fuente WebP
+            const picture = image.closest('picture'); // Necesita ser definida aquí
+            
+            // Usamos el 'data-full-src' como fallback inicial
+            let fullUrl = image.getAttribute("data-full-src"); 
+
+            // Verificar si la imagen está dentro de un <picture> y tiene un <source> WebP
+            if (picture) {
+                const webpSource = picture.querySelector('source[type="image/webp"]');
+                
+                if (webpSource) {
+                    const srcset = webpSource.getAttribute('srcset');
+                    
+                    // Regex para encontrar todas las URLs y sus descriptores de ancho (ej. "ruta.jpg?as=webp 1200w")
+                    // g: global, buscar todas las coincidencias
+                    const matches = srcset.match(/([^\s]+)\s+\d+w/g); 
+                    
+                    if (matches && matches.length > 0) {
+                        // Tomamos el último elemento (que es la URL de mayor resolución)
+                        const lastMatch = matches[matches.length - 1];
+                        
+                        // Separamos la URL del descriptor ' w' y asignamos a fullUrl
+                        fullUrl = lastMatch.split(' ')[0]; 
+                    }
+                }
+            }
+
+            // Si la extracción del srcset falló, usamos el data-full-src o el src como fallback.
+            // Si data-full-src ya contenía una URL, la usamos.
             if (fullUrl) {
                 openLightbox(fullUrl);
+            } else {
+                // Fallback final: la imagen pequeña del src
+                openLightbox(image.src);
             }
         });
     });

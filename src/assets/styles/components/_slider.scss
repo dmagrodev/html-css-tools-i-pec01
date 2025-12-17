@@ -38,9 +38,15 @@
 .slider__image {
     display: block;
     width: 100%;
-    height: func.rem(400);  
+    height: func.rem(250);  
     object-fit: cover; 
 
+    mask-image: radial-gradient(
+        circle, 
+        black 80%,
+        transparent 95%
+    );
+    mask-mode: alpha;
     @media (min-width: vars.$mq-desktop-width) {
         width: 100%;
         height: func.rem(400); 

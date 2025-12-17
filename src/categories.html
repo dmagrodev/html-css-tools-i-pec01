@@ -2,13 +2,14 @@
 <html lang="es">
   <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIOTO Travel - Que Visitar</title>
     <link rel="stylesheet" href="./assets/styles/main.scss" />
 
   </head>
   <body class="kioto-body">
      <include src="./views/partials/_header.html" id = "inicio"></include>
-        
+     <include src="./views/partials/_sakura_petals.html"></include>   
       <div class="cat-main-grid">
           <div class="cat-card__side-menu">
               <ul class = "cat-menu__list">
@@ -26,11 +27,34 @@
               <h2 class="cat-grid-group__title">Higashiyama y Gion</h2>
               <div class="cat-grid-group__content">
                 <div class="cat-card">
+                  <picture>
+                    <source 
+                          srcset="./assets/resources/images/Kiyomizu_Temple-400w.jpg?as=avif 400w,
+                                  ./assets/resources/images/Kiyomizu_Temple-800w.jpg?as=avif 800w,
+                                  ./assets/resources/images/Kiyomizu_Temple-1200w.jpg?as=avif 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/avif" />
+                      <source 
+                          srcset="./assets/resources/images/Kiyomizu_Temple-400w.jpg?as=webp 400w,
+                                  ./assets/resources/images/Kiyomizu_Temple-800w.jpg?as=webp 800w,
+                                  ./assets/resources/images/Kiyomizu_Temple-1200w.jpg?as=webp 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/webp" />
 
-                    <picture>
-                      <!-- <source srcset="./assets/resources/images/Kiyomizu_Temple-md.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/Kiyomizu_Temple-md.jpg" alt="Kiyomizudera" class="cat-card__image gallery__image" />
-                    </picture>
+                      <source 
+                          srcset="./assets/resources/images/Kiyomizu_Temple-400w.jpg 400w,
+                                  ./assets/resources/images/Kiyomizu_Temple-800w.jpg 800w,
+                                  ./assets/resources/images/Kiyomizu_Temple-1200w.jpg 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/jpeg"/>
+                      
+                      <img src="./assets/resources/images/Kiyomizu_Temple-400w.jpg" 
+                          alt="Templo Kiyomizudera, vista parcial de la terraza de madera" 
+                          class="cat-card__image gallery__image" loading="eager" tabindex="0" 
+     role="button" 
+     aria-label="Ver imagen en tamaño completo"/>
+                  </picture>
+
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="Kiyomizudera--content--details">
                             <span class="cat-details-toggle-btn__icon">+</span>
@@ -40,11 +64,9 @@
                             <a class="cat-card__link"href="./details_kiyomizudera.html">Templo de Kiyomizudera</a></span>
                         </h3> 
                     </div>
-                     <hr class="useparator--horizontal">
-
+                    <hr class="useparator--horizontal">
                     <div id="Kiyomizudera--content--details" class="cat-details-collapsable">
-                      <p class="cat-card__text utext--justify"> El templo Kiyomizudera 清水寺 o templo del agua pura </p>
-                      
+                      <p class="cat-card__text utext--justify"> El templo Kiyomizudera 清水寺 o templo del agua pura </p> 
                       <p class="cat-card__text utext--justify"> Es un conjunto de templos y recintos religiosos 
                         situados en el distrito de Higashiyama, al este de Kioto.</p>
                       <p class="cat-card__text utext--justify"> Además de su valor histórico y arquitectónico, Kiyomizudera ofrece una 
@@ -53,12 +75,32 @@
                     </div>
                 </div>
                 
-
                 <div class="cat-card">
-                    <picture>
-                      <!-- <source srcset="./assets/resources/images/home_pexels-dsd-143941-1822605.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/home_pexels-dsd-143941-1822605.jpg" alt="Fushimi Inari" class="cat-card__image gallery__image" />
-                    </picture>
+                  <picture>
+
+                    <source srcset="./assets/resources/images/home_pexels-dsd-400w.jpg?as=avif 400w, 
+                                    ./assets/resources/images/home_pexels-dsd-800w.jpg?as=avif 800w,
+                                    ./assets/resources/images/home_pexels-dsd-1200w.jpg?as=avif 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/avif" />
+
+                      <source srcset="./assets/resources/images/home_pexels-dsd-400w.jpg?as=webp 400w, 
+                                      ./assets/resources/images/home_pexels-dsd-800w.jpg?as=webp 800w,
+                                      ./assets/resources/images/home_pexels-dsd-1200w.jpg?as=webp 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/webp" />
+
+                      <source srcset="./assets/resources/images/home_pexels-dsd-400w.jpg 400w,
+                                      ./assets/resources/images/home_pexels-dsd-800w.jpg 800w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/jpeg"/>
+                      
+                      <img src="./assets/resources/images/home_pexels-dsd-400w.jpg" 
+                          alt="Fushimi Inari, pasarela de torii rojas" class="cat-card__image gallery__image"  loading="eager" tabindex="0" 
+                          role="button" 
+                          aria-label="Ver imagen en tamaño completo"/>
+                  </picture>
+
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="fushimi--content--details">
                             <span class="cat-details-toggle-btn__icon">+</span>
@@ -67,7 +109,7 @@
                           <span><a class="cat-card__link" href="./details_fushimi_inari.html">Fushimi Inari</a></span>
                         </h3> 
                     </div>
-                     <hr class="useparator--horizontal">
+                    <hr class="useparator--horizontal">
 
                     <div id="fushimi--content--details" class="cat-details-collapsable">
                         <p class="cat-card__text utext--justify">El Santuario de los Mil Torii. </p>
@@ -79,10 +121,31 @@
                 </div>
 
                 <div class="cat-card">
-                    <picture>
-                      <!-- <source srcset="./assets/resources/images/Gion-main.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/Gion-main.jpg" alt="Gion, barrio" class="cat-card__image gallery__image" />
-                    </picture>
+                  <picture>
+                      <source srcset="./assets/resources/images/Gion-main-400w.jpg?as=avif 400w, 
+                              ./assets/resources/images/Gion-main-800w.jpg?as=avif 800w,
+                              ./assets/resources/images/Gion-main-1200w.jpg?as=avif 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/avif" />
+                      <source srcset="./assets/resources/images/Gion-main-400w.jpg?as=webp 400w, 
+                              ./assets/resources/images/Gion-main-800w.jpg?as=webp 800w,
+                              ./assets/resources/images/Gion-main-1200w.jpg?as=webp 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/webp" />
+
+                      <source srcset="./assets/resources/images/Gion-main-400w.jpg 400w,
+                                  ./assets/resources/images/Gion-main-800w.jpg 800w,
+                                  ./assets/resources/images/Gion-main-1200w.jpg 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/jpeg"/>
+                      
+                      <img src="./assets/resources/images/Gion-main-400w.jpg" 
+                          alt="Barrio de Gion, calle principal con casas tradicionales" 
+                          class="cat-card__image gallery__image" loading="eager" tabindex="0" 
+                          role="button" 
+                          aria-label="Ver imagen en tamaño completo"/>
+                  </picture>
+
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="gion--content--details">
                             <span class="cat-details-toggle-btn__icon">+</span>
@@ -103,9 +166,30 @@
 
                 <div class="cat-card">
                   <picture>
-                    <!-- <source srcset="./assets/resources/images/Cherry_Blossom_ Higashiyama-md.jpg?=webp" type="image/webp" /> -->
-                    <img src="./assets/resources/images/Cherry_Blossom_ Higashiyama-md.jpg" alt="Higashiyama" class="cat-card__image gallery__image" />
+                    <source srcset="./assets/resources/images/Cherry_Blossom_Higashiyama-400w.jpg?as=avif 400w, 
+                              ./assets/resources/images/Cherry_Blossom_Higashiyama-800w.jpg?as=avif 800w,
+                              ./assets/resources/images/Cherry_Blossom_Higashiyama-1200w.jpg?as=avif 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/avif" />
+                      <source srcset="./assets/resources/images/Cherry_Blossom_Higashiyama-400w.jpg?as=webp 400w, 
+                              ./assets/resources/images/Cherry_Blossom_Higashiyama-800w.jpg?as=webp 800w,
+                              ./assets/resources/images/Cherry_Blossom_Higashiyama-1200w.jpg?as=webp 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/webp" />
+
+                      <source srcset="./assets/resources/images/Cherry_Blossom_Higashiyama-400w.jpg 400w,
+                                  ./assets/resources/images/Cherry_Blossom_Higashiyama-800w.jpg 800w,
+                                  ./assets/resources/images/Cherry_Blossom_Higashiyama-1200w.jpg 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/jpeg"/>
+                      
+                      <img src="./assets/resources/images/Cherry_Blossom_Higashiyama-400w.jpg" 
+                          alt="Barrio Higashiyama, calle con cerezos en flor" 
+                          class="cat-card__image gallery__image" loading="eager" tabindex="0" 
+                          role="button" 
+                          aria-label="Ver imagen en tamaño completo"/>
                   </picture>
+
                   <div class="cat-card__header">
                       <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="higashiyama--content--details">
                           <span class="cat-details-toggle-btn__icon">+</span>
@@ -128,9 +212,25 @@
 
                 <div class="cat-card">
                   <picture>
-                    <!-- <source srcset="./assets/resources/images/nisiki_market.jpg?=webp" type="image/webp" /> -->
-                    <img src="./assets/resources/images/nisiki_market.jpg" alt="Nisiki market" class="cat-card__image gallery__image" />
+                      <source srcset="./assets/resources/images/nisiki_market-400w.jpg?as=avif 400w, 
+                              ./assets/resources/images/nisiki_market-800w.jpg?as=avif 800w,
+                              ./assets/resources/images/nisiki_market-1200w.jpg?as=avif 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/avif" />
+
+                      <source srcset="./assets/resources/images/nisiki_market-400w.jpg 400w,
+                                  ./assets/resources/images/nisiki_market-800w.jpg 800w,
+                                  ./assets/resources/images/nisiki_market-1200w.jpg 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/jpeg"/>
+                      
+                      <img src="./assets/resources/images/nisiki_market-400w.jpg"
+                          alt="Mercado Nishiki, puestos de comida y productos locales" 
+                          class="cat-card__image gallery__image" loading="eager" tabindex="0" 
+                          role="button" 
+                          aria-label="Ver imagen en tamaño completo" />
                   </picture>
+
                   <div class="cat-card__header">
                       <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="nisiki--content--details">
                           <span class="cat-details-toggle-btn__icon">+</span>
@@ -161,10 +261,31 @@
               <h2 class="cat-grid-group__title">Sagano y Arashiyama</h2>
               <div class="cat-grid-group__content">
                 <div class="cat-card">
-
                     <picture>
-                      <!-- <source srcset="./assets/resources/images/home_Bamboo-Forest-Kimono-md.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/home_Bamboo-Forest-Kimono-md.jpg" alt="Arashiyama" class="cat-card__image gallery__image" />
+                        <source srcset="./assets/resources/images/home_Bamboo-Forest-Kimono-400w.jpg?as=avif 400w, 
+                                ./assets/resources/images/home_Bamboo-Forest-Kimono-800w.jpg?as=avif 800w,
+                                ./assets/resources/images/home_Bamboo-Forest-Kimono-1200w.jpg?as=avif 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/avif" />
+
+                        <source srcset="./assets/resources/images/home_Bamboo-Forest-Kimono-400w.jpg?as=webp 400w, 
+                                ./assets/resources/images/home_Bamboo-Forest-Kimono-800w.jpg?as=webp 800w,
+                                ./assets/resources/images/home_Bamboo-Forest-Kimono-1200w.jpg?as=webp 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/webp" />
+
+                        <source srcset="./assets/resources/images/home_Bamboo-Forest-Kimono-400w.jpg 400w,
+                                    ./assets/resources/images/home_Bamboo-Forest-Kimono-800w.jpg 800w,
+                                    ./assets/resources/images/home_Bamboo-Forest-Kimono-1200w.jpg 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/jpeg"/>
+                        
+                        <img src="./assets/resources/images/home_Bamboo-Forest-Kimono-400w.jpg"
+                            alt="Bosque de Bambú, Arashiyama" 
+                            class="cat-card__image gallery__image" 
+                            loading="lazy" tabindex="0" 
+                            role="button" 
+                            aria-label="Ver imagen en tamaño completo" />
                     </picture>
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="arashiyama--content--details">
@@ -185,8 +306,29 @@
 
                 <div class="cat-card">
                     <picture>
-                      <!-- <source srcset="./assets/resources/images/togetsukyo-brige.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/togetsukyo-brige.jpg" alt="Puente Togetsukyo" class="cat-card__image gallery__image" />
+                          <source srcset="./assets/resources/images/togetsukyo-brige-400w.jpg?as=avif 400w, 
+                                  ./assets/resources/images/togetsukyo-brige-800w.jpg?as=avif 800w,
+                                  ./assets/resources/images/togetsukyo-brige-1200w.jpg?as=avif 1200w" 
+                              sizes="(min-width: 1000px) 300px, 100vw" 
+                              type="image/avif" />
+                        <source srcset="./assets/resources/images/togetsukyo-brige-400w.jpg?as=webp 400w, 
+                                ./assets/resources/images/togetsukyo-brige-800w.jpg?as=webp 800w,
+                                ./assets/resources/images/togetsukyo-brige-1200w.jpg?as=webp 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/webp" />
+
+                        <source srcset="./assets/resources/images/togetsukyo-brige-400w.jpg 400w,
+                                    ./assets/resources/images/togetsukyo-brige-800w.jpg 800w,
+                                    ./assets/resources/images/togetsukyo-brige-1200w.jpg 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/jpeg"/>
+                        
+                        <img src="./assets/resources/images/togetsukyo-brige-400w.jpg"
+                            alt="Puente Togetsukyo sobre el río Hozu" 
+                            class="cat-card__image gallery__image" 
+                            loading="lazy" tabindex="0" 
+                            role="button" 
+                            aria-label="Ver imagen en tamaño completo" />
                     </picture>
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="sagano--content--details">
@@ -216,11 +358,33 @@
               <h2 class="cat-grid-group__title">Centro de Kioto</h2>
               <div class="cat-grid-group__content">
                 <div class="cat-card">
+                  <picture>
+                        <source srcset="./assets/resources/images/kinkakuji-kyoto-japan-400W.jpg?as=avif 400w,    
+                                ./assets/resources/images/kinkakuji-kyoto-japan-800w.jpg?as=avif 800w,
+                                ./assets/resources/images/kinkakuji-kyoto-japan-1200w.jpg?as=avif 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/avif" />
 
-                    <picture>
-                      <!-- <source srcset="./assets/resources/images/kinkakuji-kyoto-japan.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/kinkakuji-kyoto-japan.jpg" alt="Kinkakuji" class="cat-card__image gallery__image" />
+                        <source srcset="./assets/resources/images/kinkakuji-kyoto-japan-400W.jpg?as=webp 400w, 
+                                ./assets/resources/images/kinkakuji-kyoto-japan-800w.jpg?as=webp 800w,
+                                ./assets/resources/images/kinkakuji-kyoto-japan-1200w.jpg?as=webp 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/webp" />
+
+                        <source srcset="./assets/resources/images/kinkakuji-kyoto-japan-400w.jpg 400w,
+                                    ./assets/resources/images/kinkakuji-kyoto-japan-800w.jpg 800w,
+                                    ./assets/resources/images/kinkakuji-kyoto-japan-1200w.jpg 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/jpeg"/>
+                        
+                        <img src="./assets/resources/images/kinkakuji-kyoto-japan-400W.jpg"
+                            alt="Templo Kinkaku-Ji, el Pabellón Dorado" 
+                            class="cat-card__image gallery__image" 
+                            loading="lazy" tabindex="0" 
+                            role="button" 
+                            aria-label="Ver imagen en tamaño completo"/>
                     </picture>
+
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="kinkakuji--content--details">
                             <span class="cat-details-toggle-btn__icon">+</span>
@@ -239,12 +403,33 @@
                     </div>
                 </div>
                 
-
                 <div class="cat-card">
                     <picture>
-                      <!-- <source srcset="./assets/resources/images/castillo-nijo.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/castillo-nijo.jpg" alt="Castillo Nijo" class="cat-card__image gallery__image" />
+                        <source srcset="./assets/resources/images/castillo-nijo-400w.jpg?as=avif 400w, 
+                                ./assets/resources/images/castillo-nijo-800w.jpg?as=avif 800w,
+                                ./assets/resources/images/castillo-nijo-1200w.jpg?as=avif 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/avif" />
+                        <source srcset="./assets/resources/images/castillo-nijo-400w.jpg?as=webp 400w, 
+                                ./assets/resources/images/castillo-nijo-800w.jpg?as=webp 800w,
+                                ./assets/resources/images/castillo-nijo-1200w.jpg?as=webp 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/webp" />
+
+                        <source srcset="./assets/resources/images/castillo-nijo-400w.jpg 400w,
+                                    ./assets/resources/images/castillo-nijo-800w.jpg 800w,
+                                    ./assets/resources/images/castillo-nijo-1200w.jpg 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/jpeg"/>
+                        
+                        <img src="./assets/resources/images/castillo-nijo-400W.jpg"
+                            alt="Castillo Nijo, entrada principal" 
+                            class="cat-card__image gallery__image" 
+                            loading="lazy" tabindex="0" 
+                            role="button" 
+                            aria-label="Ver imagen en tamaño completo"/>
                     </picture>
+                    
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="nijo--content--details">
                             <span class="cat-details-toggle-btn__icon">+</span>
@@ -268,11 +453,43 @@
               <h2 class="cat-grid-group__title">Otras Localidades</h2>
               <div class="cat-grid-group__content">
                 <div class="cat-card">
+                  <picture>
+                      
+                      <source 
+                          media="(max-width: 999px)" 
+                          srcset="./assets/resources/images/osaka-castle-500.jpg?as=webp 500w, 
+                                  ./assets/resources/images/osaka-castle-640.jpg?as=webp 640w,
+                                  ./assets/resources/images/osaka-castle-fullheight.jpg?as=webp 800w" 
+                          type="image/webp" />
 
-                    <picture>
-                      <!-- <source srcset="./assets/resources/images/osaka-castle.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/osaka-castle.jpg" alt="Castillo Osaka" class="cat-card__image gallery__image" />
-                    </picture>
+                      <source 
+                          srcset="./assets/resources/images/osaka-castle-panoramic-400.jpg?as=webp 400w, 
+                                  ./assets/resources/images/osaka-castle-panoramic-800.jpg?as=webp 800w,
+                                  ./assets/resources/images/osaka-castle-panoramic-1200.jpg?as=webp 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/webp" />
+
+                      <source 
+                          media="(max-width: 999px)" 
+                          srcset="./assets/resources/images/osaka-castle-500.jpg 500w, 
+                                  ./assets/resources/images/osaka-castle-640.jpg 640w,
+                                  ./assets/resources/images/osaka-castle-fullheight.jpg 800w" 
+                          type="image/jpeg" />
+                        <source 
+                          srcset="./assets/resources/images/osaka-castle-panoramic-400.jpg 400w, 
+                                  ./assets/resources/images/osaka-castle-panoramic-800.jpg 800w,
+                                  ./assets/resources/images/osaka-castle-panoramic-1200.jpg 1200w" 
+                          sizes="(min-width: 1000px) 300px, 100vw" 
+                          type="image/jpeg"  />
+                          
+                      <img 
+                          src="./assets/resources/images/osaka-castle-panoramic-400.jpg" 
+                          alt="Castillo de Osaka visto desde el foso con puente" 
+                          class="cat-card__image gallery__image"
+                          loading="lazy" tabindex="0" 
+                          role="button" 
+                          aria-label="Ver imagen en tamaño completo"/>
+                  </picture>
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="osaka--content--details">
                             <span class="cat-details-toggle-btn__icon">+</span>
@@ -293,9 +510,36 @@
 
                 <div class="cat-card">
                     <picture>
-                      <!-- <source srcset="./assets/resources/images/nara-nara.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/nara-nara.jpg" alt="Nara" class="cat-card__image gallery__image" />
+                      <source 
+                        srcset="./assets/resources/images/nara-nara-400w.jpg?as=avif 400w, 
+                                ./assets/resources/images/nara-nara-600w.jpg?as=avif 600w,
+                                ./assets/resources/images/nara-nara-1200w.jpg?as=avif 1200w"
+                        sizes="(min-width: 1000px) 300px, 90vw" 
+                        type="image/avif" />
+                     <source 
+                        srcset="./assets/resources/images/nara-nara-400w.jpg?as=webp 400w, 
+                                ./assets/resources/images/nara-nara-600w.jpg?as=webp 600w,
+                                ./assets/resources/images/nara-nara-1200w.jpg?as=webp 1200w"
+                        sizes="(min-width: 1000px) 300px, 90vw" 
+                        type="image/webp" tabindex="0" 
+                        role="button" 
+                        aria-label="Ver imagen en tamaño completo"/>
+
+                    <source 
+                        srcset="./assets/resources/images/nara-nara-400w.jpg 400w,
+                                ./assets/resources/images/nara-nara-600w.jpg 600w,
+                                ./assets/resources/images/nara-nara-1200w.jpg 1200w" 
+                        sizes="(min-width: 1000px) 300px, 90vw"  
+                        type="image/jpeg"/>
+                            
+                        <img src="./assets/resources/images/nara-nara-400W.jpg"
+                            alt="Ciervo frente a un templo tradicional en el parque de Nara" 
+                            class="cat-card__image gallery__image" 
+                            loading="lazy" tabindex="0" 
+                            role="button" 
+                            aria-label="Ver imagen en tamaño completo" />
                     </picture>
+
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="nara--content--details">
                             <span class="cat-details-toggle-btn__icon">+</span>
@@ -317,8 +561,29 @@
 
                 <div class="cat-card">
                     <picture>
-                      <!-- <source srcset="./assets/resources/images/Kifune-Kifune.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/Kifune-Kifune.jpg" alt="Kifune" class="cat-card__image gallery__image" />
+                        <source srcset="./assets/resources/images/Kifune-Kifune-400w.jpg?as=avif 400w, 
+                                ./assets/resources/images/Kifune-Kifune-800w.jpg?as=avif 800w,
+                                ./assets/resources/images/Kifune-Kifune-1200w.jpg?as=avif 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/avif" />
+                        <source srcset="./assets/resources/images/Kifune-Kifune-400w.jpg?as=webp 400w, 
+                                ./assets/resources/images/Kifune-Kifune-800w.jpg?as=webp 800w,
+                                ./assets/resources/images/Kifune-Kifune-1200w.jpg?as=webp 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/webp" />
+
+                        <source srcset="./assets/resources/images/Kifune-Kifune-400w.jpg 400w,
+                                    ./assets/resources/images/Kifune-Kifune-800w.jpg 800w,
+                                    ./assets/resources/images/Kifune-Kifune-1200w.jpg 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/jpeg"/>
+                        
+                        <img src="./assets/resources/images/Kifune-Kifune-400W.jpg"
+                            alt="Santuario Kifune-jinja, camino de entrada con linternas" 
+                            class="cat-card__image gallery__image" 
+                            loading="lazy" tabindex="0" 
+                            role="button" 
+                            aria-label="Ver imagen en tamaño completo"/>
                     </picture>
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="kifune--content--details">
@@ -341,9 +606,31 @@
 
                 <div class="cat-card">
                     <picture>
-                      <!-- <source srcset="./assets/resources/images/Himeji_castle.jpg?=webp" type="image/webp" /> -->
-                      <img src="./assets/resources/images/Himeji_castle.jpg" alt="Himeji castle" class="cat-card__image gallery__image" />
+                        <source srcset="./assets/resources/images/himeji-castle-400w.jpg?as=avif 400w, 
+                                ./assets/resources/images/himeji-castle-800w.jpg?as=avif 800w,
+                                ./assets/resources/images/himeji-castle-1200w.jpg?as=avif 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/avif" />
+                        <source srcset="./assets/resources/images/himeji-castle-400w.jpg?as=webp 400w, 
+                                ./assets/resources/images/himeji-castle-800w.jpg?as=webp 800w,
+                                ./assets/resources/images/himeji-castle-1200w.jpg?as=webp 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/webp" />
+
+                        <source srcset="./assets/resources/images/himeji-castle-400w.jpg 400w,
+                                    ./assets/resources/images/himeji-castle-800w.jpg 800w,
+                                    ./assets/resources/images/himeji-castle-1200w.jpg 1200w" 
+                            sizes="(min-width: 1000px) 300px, 100vw" 
+                            type="image/jpeg"/>
+                        
+                        <img src="./assets/resources/images/himeji-castle-400W.jpg"
+                            alt="himeji castle" 
+                            class="cat-card__image gallery__image" 
+                            loading="lazy" tabindex="0" 
+                            role="button" 
+                            aria-label="Ver imagen en tamaño completo"/>
                     </picture>
+
                     <div class="cat-card__header">
                         <button class="cat-details-toggle-btn" aria-expanded="false" aria-controls="himeji--content--details">
                             <span class="cat-details-toggle-btn__icon">+</span>

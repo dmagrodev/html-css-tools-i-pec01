@@ -2,21 +2,28 @@
 @use "../utils/functions" as func;
 
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .kioto-body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     padding: 0rem;
-    margin: 0;
+    margin: 0px;
     font-family: vars.$font-family-sans-serif;
-    font-size: func.rem(20);
+    font-size: func.rem(18);
     color: vars.$color-kioto-text;
     background-color: vars.$color-kioto-bg;
+    padding-top: func.rem(100);
 
     @media (min-width: vars.$mq-min-width) {
         max-width: none;
-        padding: 0.5rem;
-        padding-top: 0rem;
+        padding: 0.2rem;
+        padding-top: func.rem(100);
     }
 }
 
@@ -26,9 +33,18 @@
     margin-top: 1rem;
     text-align: center;
     background-color: vars.$color-kioto-container;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
-                0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);            
+                0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);   
+    
+    clip-path: vars.$clip-path-octogon;
+
+    @media (max-width: 600px) {
+        clip-path: none; 
+        max-width: 99vw;
+        margin: 1rem auto;
+    }              
+
 }
 
 .kioto-title__text{
@@ -49,6 +65,8 @@
     font-size: func.rem(24);
     font-weight: 700;
     color: vars.$color-kioto-subtitle;
+    padding-left: 10px;
+    padding-right: 10px;
     @media (min-width: vars.$mq-min-width) {
         font-size: func.rem(24);
     }
@@ -60,8 +78,17 @@
 }
  
 .kioto-content-block--centered{
-    max-width: 900;
+    max-width: 900px;
     margin: 0 auto;
+    iframe {
+        width: 100%;
+        height: func.rem(250); 
+        max-width: 100%;
+        
+        @media (min-width: vars.$mq-desktop-width) { 
+             height: func.rem(520);
+        }
+    }
 }
 
 .kioto-content-block__paragraph{
@@ -90,9 +117,9 @@
     @media (min-width: vars.$mq-desktop-width) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: func.rem(30);
+        gap: func.rem(20);
         align-items: center;
-        max-width: 1000;
+        max-width: 1000px;
         margin: auto;
 
     }
@@ -102,7 +129,7 @@
     padding: 3rem; 
     margin-right: auto;
     margin-left: auto;
-    font-size: func.rem(18);
+    font-size: func.rem(14);
     line-height: 1.6;
     text-align: justify;
      @media (min-width: vars.$mq-desktop-width) {
@@ -118,7 +145,7 @@
     width: 100%;
     max-width: 450;
     height: auto;
-    background-color: vars.$color-kioto-bg-gradient;
+
     border-radius: func.rem(8);
     box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
 
@@ -127,14 +154,16 @@
         margin: auto;
     }
 }
-
 .kioto-two-col-container__map {
     max-width: 100%;
     height: auto;
     margin: auto;
     border-radius: func.rem(8);
     box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
-
+    iframe { 
+        width: 100%;
+        height: func.rem(300); 
+    }
 
     @media (min-width: vars.$mq-desktop-width) { 
         text-align: center; 
@@ -142,7 +171,7 @@
 }
 
 .kioto-two-column-container__title{
-    font-size: func.rem(40);
+    font-size: func.rem(24);
     font-weight: 600;
     @media (min-width: vars.$mq-desktop-width) { 
         font-size: 1.5rem; 
@@ -172,7 +201,7 @@
 
 .kioto__item {
     margin-bottom: func.rem(10);
-    font-size: func.rem(20);
+    font-size: func.rem(16);
     color: vars.$color-kioto-text;
 }
 
@@ -182,10 +211,11 @@
   border-radius: func.rem(15);
   box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+   // mask: url(#soft-vignette-mask);
 
     &:hover {
         box-shadow: 0 func.rem(8) func.rem(16) rgba(0, 0, 0, 0.2);
-        transform: translateY(func.rem(-5)) scale(1.02) 
+        transform: translateY(func.rem(-5)) scale(1.02);
     }
 }
 

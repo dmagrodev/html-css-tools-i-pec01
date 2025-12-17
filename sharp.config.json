@@ -1,0 +1,14 @@
+{
+    "quality": 80,
+    "png":{
+        "quality": 90
+    },
+    "webp": {
+        "quality": 75,
+        "effort": 6
+    },
+    "avif": {
+        "quality": 45,
+        "effort": 6
+    }
+}

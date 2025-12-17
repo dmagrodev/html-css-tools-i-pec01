@@ -6,14 +6,15 @@
 /* ---------------------------------- */
 
 .main-header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 3000;
-    width: 100%; 
+    width: 100%;
     background-color: vars.$color-kioto-container; 
     border-bottom: func.rem(2) solid vars.$color-kioto-bg;
     border-radius: func.rem(10);
     box-shadow: 0 func.rem(4) func.rem(10) func.rem(-4) rgba(0, 0, 0, 0.2);
+
 }
 
 .main-nav {
@@ -52,7 +53,7 @@
 }
 
 .title__text--primary{
-    font-size: func.rem(48);
+    font-size: func.rem(26);
     font-weight: bold;
     color: vars.$color-kioto-title;
 
@@ -63,8 +64,8 @@
 }
 
 .title__text--secondary{
-    padding: func.rem(10) ;
-    font-size: func.rem(36);
+    padding: func.rem(5) ;
+    font-size: func.rem(20);
     font-weight: bold;
     color: vars.$color-kioto-secondary;
     transition: color 0.3s ease-in-out;
@@ -79,7 +80,8 @@
 }
 
 .main-nav__logo {
-    width: func.rem(200); 
+    width: func.rem(60); 
+    height: auto;
     font-size: func.rem(24);
     font-weight: bold;
     color: vars.$color-kioto-blue;
@@ -93,15 +95,16 @@
         box-shadow: 0 0 func.rem(1) vars.$color-kioto-secondary, 
                     0 0 func.rem(30) rgba(vars.$color-kioto-secondary, 0.5); 
     }
-        @media (min-width: vars.$mq-desktop-width) {
+    @media (min-width: vars.$mq-desktop-width) {
         width: func.rem(100); 
+        height: auto;
     }
 }
 
 .main-nav__toggle {
     display: block; 
     padding: 1rem;
-    font-size: func.rem(50);
+    font-size: func.rem(30);
     color: vars.$color-kioto-blue;
     cursor: pointer; 
     background: none;
@@ -115,6 +118,98 @@
         display: none; 
     }
 }
+
+.main-nav__logo2 {
+    height: 100px; 
+    width: auto;
+}
+
+.main-nav__logo2 * {
+    /* Estado inicial: Gris. */
+    filter: grayscale(1); 
+    
+    /* ¡CORRECCIÓN! Combinar transiciones en una sola línea. */
+    /* Tiempo para que el color vuelva (filter) y para que se complete la rotación (transform) */
+    transition: 
+        filter 2.0s ease-in-out,
+        transform 1.0s ease-in-out;
+    
+    /* Definir el origen de transformación para evitar saltos */
+    transform-origin: center center;
+}
+.main-nav__logo2 path {
+    filter: grayscale(1); 
+    transition: filter 2.0s ease-in-out, transform 1.0s ease-in-out;
+}
+/* -------------------------------------- */
+/* 2. HOVER: LA ACCIÓN y la SECUENCIA */
+/* -------------------------------------- */
+
+/* Define la acción de colorear y rotar para TODOS los elementos a animar */
+.main-nav__logo2:hover #sky *,
+.main-nav__logo2:hover #mountain *,
+.main-nav__logo2:hover #clouds *,
+.main-nav__logo2:hover #sun *,
+.main-nav__logo2:hover #sakura-1 *,
+.main-nav__logo2:hover #sakura-2 *, 
+.main-nav__logo2:hover #petal-1 *, 
+.main-nav__logo2:hover #flower-5 * {
+    /* La acción: Mostrar color original */
+    filter: grayscale(0); 
+}
+
+/* La acción: Rotar los sakuras */
+.main-nav__logo2:hover #sakura-1 *,
+.main-nav__logo2:hover #sakura-2 *,
+.main-nav__logo2:hover #sakura-3 *,
+.main-nav__logo2:hover #sakura-4 *,
+.main-nav__logo2:hover #sakura-5 * {
+    transform-origin: center center;
+    transform: rotate(360deg);
+}
+.main-nav__logo2 #petal-2,
+.main-nav__logo2 #petal-3 {
+    transform-origin: center center;
+    animation: 
+        caida-petal 
+        3s 
+        ease-in-out 
+        infinite 
+        alternate;
+    /* Retraso para iniciar la animación después de que el primer pétalo haya comenzado */
+    animation-delay: 1.5s; 
+}
+
+.main-nav__logo2 #petal-1 {
+    /* Define el punto de origen de la transformación para evitar saltos raros */
+    transform-origin: center center;
+    
+    /* Aplicar la animación de caída suave */
+    animation: 
+        caida-petal 
+        3s          /* Duración de 3 segundos (para un movimiento lento) */
+        ease-in-out /* Curva de velocidad (suave al inicio/fin) */
+        infinite    /* La animación se repite sin parar */
+        alternate;  /* Invierte la dirección en cada ciclo (va y viene) */
+}
+/* -------------------------------------- */
+/* 3. APLICACIÓN DE RETRASOS SECUENCIALES (transition-delay) */
+/* La animación se encenderá en este orden, creando la secuencia. */
+/* -------------------------------------- */
+
+/* FASE 1: Fondo (Rápido) */
+.main-nav__logo2:hover #sky path { filter: grayscale(0); transition-delay: 0s; }
+.main-nav__logo2:hover #clouds path {filter: grayscale(0);  transition-delay: 0.1s; }
+.main-nav__logo2:hover #sun path{ filter: grayscale(0);  filter: grayscale(0); transition-delay: 0.2s; }
+
+/* FASE 2: Paisaje principal */
+.main-nav__logo2:hover #mountain * { transition-delay: 0.4s; }
+
+/* FASE 3: Flores (Rotación y Color) */
+.main-nav__logo2:hover #petal-1 * { transition-delay: 0.6s; }
+.main-nav__logo2:hover #sakura-1 * { transition-delay: 0.7s; } /* Rotará y se coloreará a 0.7s */
+.main-nav__logo2:hover #sakura-2 * { transition-delay: 0.8s; } /* Rotará y se coloreará a 0.8s */
+.main-nav__logo2:hover #flower-5 * { transition-delay: 0.9s; }
 
 .main-nav__list { 
     position: absolute;
@@ -151,7 +246,7 @@
     position: relative;
     width: 100%;
     font-family: vars.$font-family-sans-serif;
-    font-size: func.rem(18);
+    font-size: func.rem(12);
     font-weight: 600;
     border-bottom: func.rem(1) solid vars.$color-kioto-grey-light;
     &::after {
@@ -178,7 +273,7 @@
 .main-nav__link {
     display: block;
     padding: 0.75rem 1rem;
-    font-size: 2rem;
+    font-size: 1rem;
     color: vars.$color-kioto-text;
     text-decoration: none; 
     transition: color 0.3s ease;

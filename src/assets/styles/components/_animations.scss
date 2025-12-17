@@ -1,0 +1,122 @@
+@use "../variables" as *;
+@use "../utils/functions" as func;
+
+/* ================================== */
+/* ANIMACIÓN CSS Pétalos de Sakura */
+/* ================================== */
+
+// Keyframes (Compartido por todos: Caída, Giro y Fade)
+@keyframes fallAndSpin {
+    0% { 
+        transform: translateY(-50px) rotate(0deg) scale(0.8); 
+        opacity: 0; 
+    }
+    10% {
+        opacity: 0.9;
+    }
+    100% { 
+        transform: translateY(150vh) rotate(600deg) scale(0.8); 
+        opacity: 0; 
+    }
+}
+
+// Estilos Comunes (para todos los pétalos)
+.animated-svg {
+    position: absolute; 
+    top: -50px;
+    width: 25px; 
+    height: 25px;
+    z-index: 10;
+    pointer-events: none; 
+    animation: fallAndSpin linear infinite; // Usamos la animación base
+}
+
+// PETALO 1 (Flujo base)
+#sakura-petal-1 {
+    left: 10%; 
+    animation-duration: 15s;
+    animation-delay: 0s;
+}
+
+// PETALO 2 (Rápido, centro derecha)
+#sakura-petal-2 {
+    left: 65%; 
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+// PETALO 3 (Lento, extrema izquierda)
+#sakura-petal-3 {
+    left: 5%; 
+    animation-duration: 15s;
+    animation-delay: 6s;
+}
+
+// PETALO 4 (Medio, centro izquierda)
+#sakura-petal-4 {
+    left: 30%; 
+    animation-duration: 10s;
+    animation-delay: 8s;
+}
+
+// PETALO 5 (Rápido, extrema derecha)
+#sakura-petal-5 {
+    left: 90%; 
+    animation-duration: 7s;
+    animation-delay: 1s; // Empieza casi al inicio
+}
+
+// PETALO 6 (Medio, centro)
+#sakura-petal-6 {
+    left: 50%; 
+    animation-duration: 11s;
+    animation-delay: 5s;
+}
+
+/* ================================== */
+/* KEYFRAMES Animación del separador */
+/* ================================== */
+
+@keyframes pulseAndSpin {
+    0% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+    
+    50% {
+        transform: translate(-50%, -50%) scale(1.1) rotate(180deg);
+    }
+    
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: $color-accent;
+    }
+    50% {
+        background-color: $color-sakura-light; 
+    }
+    100% {
+        background-color: $color-accent;
+    }
+}
+
+/* ================================== */
+/* KEYFRAMES Logo */
+/* ================================== */
+@keyframes logo-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}

@@ -2,27 +2,53 @@
 <html lang="es">
   <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIOTO Travel</title>
     <link rel="stylesheet" href="./assets/styles/main.scss" />
 
   </head>
   <body class="kioto-body">
      <include src="./views/partials/_header.html" id = "inicio"></include>
-        
+     <include src="./views/partials/_sakura_petals.html"></include>
+     <main >  
      <div id="inicio" class="kioto-container-portada">
               <h1 class="kioto-title__text">Kioto 京都 </h1>
               <h2 class="kioto-subtitle__text">Ciudad de tradicion y cultura</h2>
-              <div class="slider-section">
+              <div class="slider-section" aria-label="Galería de portada">
                 <div class="slider">
-                    <div class="slider__track">
+                    <div class="slider__track" role="group">
                         <div class="slider__slide slider__slide--active">
-                            <img src="./assets/resources/images/home_pexels-dsd-143941-1822605.jpg" alt="Pasarela de puertas Torii Rojas, Fushimi Inari Taisha" class="slider__image gallery__image">
+                          <picture>
+                            <source media="(min-width: 768px)" srcset="./assets/resources/images/home_pexels-dsd-1200w.jpg?as=webp 1200w" 
+                                    sizes="100vw" type="image/webp" />
+                            <source media="(max-width: 768px)" srcset="./assets/resources/images/home_pexels-dsd-800w.jpg?as=webp 800w" 
+                                  sizes="100vw" type="image/webp" />
+                            <img class="slider__image gallery__image" src="./assets/resources/images/home_pexels-dsd-1200w.jpg" alt="Pasarela de puertas Torii Rojas, Fushimi Inari Taisha" class="slider__image gallery__image" loading="eager" tabindex="0" 
+                                  role="button" 
+                                  aria-label="Ver imagen en tamaño completo">
+                          </picture>
                         </div>
                         <div class="slider__slide ">
-                            <img src="./assets/resources/images/home_Bamboo-Forest-Kimono-md.jpg" alt="Bosque de Bambu, Arasiyama" class="slider__image gallery__image">
+                          <picture >
+                           <source media="(min-width: 768px)" srcset="./assets/resources/images/home_Bamboo-Forest-Kimono-1200w.jpg?as=webp 1200w" 
+                                    sizes="100vw" type="image/webp" />
+                            <source media="(max-width: 768px)" srcset="./assets/resources/images/home_Bamboo-Forest-Kimono-800w.jpg?as=webp 800w" 
+                                  sizes="100vw" type="image/webp" />
+                            <img src="./assets/resources/images/home_Bamboo-Forest-Kimono-1200w.jpg" alt="Bosque de Bambu, Arasiyama" class="slider__image gallery__image" loading="lazy" tabindex="0" 
+                                  role="button" 
+                                  aria-label="Ver imagen en tamaño completo">
+                          </picture>
                         </div>
                         <div class="slider__slide ">
-                            <img src="./assets/resources/images/Kiyomizu_Temple-md.jpg" alt="Kiyomizudera view" class="slider__image gallery__image">
+                          <picture >
+                            <source media="(min-width: 768px)" srcset="./assets/resources/images/Kiyomizu_Temple-1200w.jpg?as=webp 1200w" 
+                                    sizes="100vw" type="image/webp" />
+                            <source media="(max-width: 768px)" srcset="./assets/resources/images/Kiyomizu_Temple-800w.jpg?as=webp 800w" 
+                                  sizes="100vw" type="image/webp" />
+                            <img src="./assets/resources/images/Kiyomizu_Temple-1200w.jpg" alt="Kiyomizudera view" class="slider__image gallery__image" loading="lazy" tabindex="0" 
+                                  role="button" 
+                                  aria-label="Ver imagen en tamaño completo">
+                          </picture>
                         </div>
                       </div>
                       <button class="slider__btn slider__btn--prev" aria-label="Foto anterior">
@@ -31,7 +57,9 @@
                       <button class="slider__btn slider__btn--next" aria-label="Foto siguiente">
                         <i class="fas fa-chevron-right" aria-hidden="true"></i>
                       </button>
-                    <div class="slider__dots">
+                    <div class="slider__dots" tabindex="0" 
+                          role="button" 
+                          aria-label="Ver imagen en tamaño completo">
                     </div>
                 </div>
               </div>
@@ -50,9 +78,11 @@
                   Gracias a su larga historia, Kioto es un tesoro de lugares históricos. Hay 14 lugares declarados Patrimonio Cultural de la Humanidad
                   dentro de los límites de la ciudad de Kioto y 3 más en localidades cercanas. Incluyen un elaborado castillo que atestigua el poder
                   de los shogunes, y santuarios y templos históricos que albergan innumerables obras de arte preciosas. Muchos otros lugares son Tesoros Nacionales o Bienes Culturales Importantes.
-                </p>    
-              </div>
-              <hr class="useparator--horizontal">
+                </p>  
+                
+
+              <!-- <hr class="useparator--horizontal"> -->
+              <include src="./views/partials/_separator_custom.html"></include>   
               <div class="kioto-two-column-container">
   
                   <div class="kioto-two-column-container__content">
@@ -73,10 +103,41 @@
                   </div>
 
               </div>
-              <hr class="useparator--horizontal">
+              <!-- <hr class="useparator--horizontal"> -->
+               <include src="./views/partials/_separator_custom.html"></include>   
                 <div class="kioto-two-column-container">
                    <div class="kioto-two-col-container__img">
-                          <img class="kioto-two-column-container__img-item gallery__image" src="./assets/resources/images/Cherry_Blossom_ Higashiyama-md.jpg" alt="Higashiyama, Cherry blosom" class="slider__image">
+                      <svg width="0" height="0" style="position: absolute;">
+                    <mask id="soft-vignette-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+                    <radialGradient id="vignette-grad">
+                    <stop offset="0%" stop-color="black" stop-opacity="1"/> 
+                    <stop offset="60%" stop-color="white" stop-opacity="1"/> 
+                    <stop offset="100%" stop-color="black" stop-opacity="1"/> 
+                    </radialGradient>
+
+                    <rect x="0" y="0" width="1" height="1" fill="url(#vignette-grad)" />
+                    </mask>
+                    </svg>
+                      <picture>
+                        <source type="image/avif"
+                                srcset="./assets/resources/images/home_pexels-dsd-400w.jpg 400w, 
+                                        ./assets/resources/images/home_pexels-dsd-800w.jpg 800w, 
+                                        ./assets/resources/images/home_pexels-dsd-1200w.jpg 1200w"
+                                sizes="(max-width: 600px) 100vw,(max-width: 1200px) 80vw, 1200px"/>
+                        <source type="image/webp"
+                                srcset="./assets/resources/images/home_pexels-dsd-400w.jpg 400w, 
+                                    ./assets/resources/images/home_pexels-dsd-800w.jpg 800w, 
+                                    ./assets/resources/images/home_pexels-dsd-1200w.jpg 1200w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 80vw, 1200px"/>
+                        <source  srcset="./assets/resources/images/home_pexels-dsd-1200w.jpg?as=webp&width=800" type="image/webp" />
+                        <img class="kioto-two-column-container__img-item gallery__image"
+                             srcset="./assets/resources/images/home_pexels-dsd-400w.jpg 400w, 
+                                    ./assets/resources/images/home_pexels-dsd-800w.jpg 800w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 80vw, 1200px"  
+                            src="./assets/resources/images/home_pexels-dsd-1200w.jpg"  alt="Fushimi inari, puertas tori" loading="lazy" tabindex="0" 
+                            role="button" 
+                            aria-label="Ver imagen en tamaño completo"/>
+                    </picture>    
                    </div>
 
                   <div class="kioto-two-column-container__content">
@@ -91,15 +152,14 @@
                   </div>
 
                 </div>
-
               </div>
-
-      <div id="lightbox" class="lightbox">
+            </div>
+          <div id="lightbox" class="lightbox">
         <div class="lightbox__content">
             <button class="lightbox__close-btn" aria-label="Cerrar galería modal"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
             <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png?" class="lightbox__image" alt="Imagen ampliada">
       </div>
-    </div>
+    </main>
     <include src="./views/partials/_footer.html" id = "footer"></include>
   </body>
   <script type="module" src="./assets/scripts/main.js"></script>
