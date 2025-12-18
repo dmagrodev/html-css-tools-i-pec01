@@ -80,6 +80,7 @@
 .kioto-content-block--centered{
     max-width: 900px;
     margin: 0 auto;
+    
     iframe {
         width: 100%;
         height: func.rem(250); 
@@ -173,6 +174,7 @@
 .kioto-two-column-container__title{
     font-size: func.rem(24);
     font-weight: 600;
+
     @media (min-width: vars.$mq-desktop-width) { 
         font-size: 1.5rem; 
     }
@@ -206,12 +208,12 @@
 }
 
 .kioto-two-column-container__img-item {
-  width: 100%;
-  height: auto;
-  border-radius: func.rem(15);
-  box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-   // mask: url(#soft-vignette-mask);
+    width: 100%;
+    height: auto;
+    border-radius: func.rem(15);
+    box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    // mask: url(#soft-vignette-mask); lo dejo comentado por si quiero probar otra vez
 
     &:hover {
         box-shadow: 0 func.rem(8) func.rem(16) rgba(0, 0, 0, 0.2);
@@ -220,5 +222,5 @@
 }
 
 .kioto__icon-tittle{
-margin-right: func.rem(20)
+    margin-right: func.rem(20)
 }

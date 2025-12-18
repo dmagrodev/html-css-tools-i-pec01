@@ -145,13 +145,10 @@ const initLightboxGallery = () => {
 
     galleryImages.forEach(image => {
         image.addEventListener('click', () => {
-            // 1. Encontrar el contenedor <picture> y la fuente WebP
-            const picture = image.closest('picture'); // Necesita ser definida aquí
-            
-            // Usamos el 'data-full-src' como fallback inicial
+
+            const picture = image.closest('picture');
             let fullUrl = image.getAttribute("data-full-src"); 
 
-            // Verificar si la imagen está dentro de un <picture> y tiene un <source> WebP
             if (picture) {
                 const webpSource = picture.querySelector('source[type="image/webp"]');
                 
@@ -159,25 +156,18 @@ const initLightboxGallery = () => {
                     const srcset = webpSource.getAttribute('srcset');
                     
                     // Regex para encontrar todas las URLs y sus descriptores de ancho (ej. "ruta.jpg?as=webp 1200w")
-                    // g: global, buscar todas las coincidencias
                     const matches = srcset.match(/([^\s]+)\s+\d+w/g); 
                     
                     if (matches && matches.length > 0) {
-                        // Tomamos el último elemento (que es la URL de mayor resolución)
                         const lastMatch = matches[matches.length - 1];
-                        
-                        // Separamos la URL del descriptor ' w' y asignamos a fullUrl
                         fullUrl = lastMatch.split(' ')[0]; 
                     }
                 }
             }
 
-            // Si la extracción del srcset falló, usamos el data-full-src o el src como fallback.
-            // Si data-full-src ya contenía una URL, la usamos.
             if (fullUrl) {
                 openLightbox(fullUrl);
             } else {
-                // Fallback final: la imagen pequeña del src
                 openLightbox(image.src);
             }
         });
@@ -240,10 +230,12 @@ const initCollapsibleContent = () => {
         
         if (contentElement) {
             button.addEventListener('click', () => {
+                const card = button.closest('.cat-card');
                 const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
                 button.setAttribute('aria-expanded', !isExpanded);
                 contentElement.classList.toggle('cat-details-collapsable');
+                card.classList.toggle('is-open');
                 contentElement.classList.toggle('cat-details-collapsable-is-open');
             });
         }

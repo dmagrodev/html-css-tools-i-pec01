@@ -21,15 +21,15 @@ max-width: 99vw;
     box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
                 0 func.rem(10) func.rem(4) func.rem(-1) rgba(0, 0, 0, 0.1);  
     clip-path: vars.$clip-path-octogon;
+    
     @media (min-width: vars.$mq-desktop-width) {
         position: sticky;
-
+        top: func.rem(120);
         z-index: 1000;
         align-self: start; 
         height: auto;
         margin-top: 2.5rem;
         font-size: 1rem;
-
     }
 
 }
@@ -97,8 +97,13 @@ max-width: 99vw;
     padding: func.rem(10);
     background-color: vars.$color-kioto-container;
     border-radius: func.rem(2);
-    box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
+    box-shadow: 0 func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+    transition: clip-path 0.4s ease, box-shadow 0.3s ease;
+    &.is-open { 
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); 
 
+    }
 }
 
 
@@ -106,8 +111,6 @@ max-width: 99vw;
     display: flex;
     align-items: center;
     padding: func.rem(10) func.rem(10);
-    
-
 }
 
 .cat-card__title-text{
@@ -121,14 +124,14 @@ max-width: 99vw;
     border-radius: func.rem(5);
     box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
-
     mask-image: linear-gradient(
-        to bottom right, 
-        transparent 0%,    // Esquina Superior Izquierda (Transparente)
-        black 30%,         // Comienza a ser visible
-        black 80%,         // La mayor parte de la imagen es visible (negro = visible)
-        transparent 100%   // Esquina Inferior Derecha (Transparente)
+        to bottom right,
+        transparent 0%, 
+        black 30%,
+        black 80%,
+        transparent 100%
     );
+
     &:hover {
         box-shadow: 0 func.rem(8) func.rem(16) rgba(0, 0, 0, 0.2);
         transform: translateY(func.rem(-5)) scale(1.02) 
@@ -143,6 +146,7 @@ max-width: 99vw;
     font-size: func.rem(14);
     line-height: 1.6;
     color: vars.$color-kioto-text;
+
     @media (min-width: vars.$mq-desktop-width) { 
         font-size: func.rem(14);
     }
@@ -187,8 +191,7 @@ max-width: 99vw;
     padding-right: 1rem;
     padding-left: 1rem; 
     opacity: 1;
-        transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
 }
 
 .cat-details-toggle-btn {

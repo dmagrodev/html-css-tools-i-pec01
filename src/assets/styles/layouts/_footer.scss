@@ -21,7 +21,7 @@
     box-shadow: func.rem(4) func.rem(4) func.rem(6) func.rem(-1) rgba(0, 0, 0, 0.5),
                 func.rem(4) func.rem(8) func.rem(8) func.rem(-1) rgba(0, 0, 0, 0.1);
     opacity:1;
-                transition: max-height 0.4s ease-out, opacity 0.4s ease-out; 
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out; 
 }
 
 .kioto-footer__content {
@@ -41,16 +41,14 @@
     opacity: 0.5;
     margin: auto;
     max-width: func.rem(300);
+
     img {
         display: block;
-        max-width: 100%; // <--- CRÍTICO: Asegura que la imagen no exceda 100% de su padre (120 rem)
+        max-width: 100%;
         height: auto;
-        animation: 
-                logo-pulse 
-                3s          /* Duración: 3 segundos por ciclo */
-                ease-in-out 
-                infinite;
+        animation: logo-pulse 3s ease-in-out infinite;
     }
+
     @media (min-width: vars.$mq-desktop-width) { 
         display: none; 
     }
@@ -107,8 +105,8 @@
 }
 
 .kioto-footer-brand__container--centered p {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .kioto-footer__brand-text--primary{
