@@ -118,11 +118,11 @@
 //         transform: translate(-50%, -50%);
 //     }
 // }
-
+    // clip-path: polygon(90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%, 10% 0);
 .useparator-kioto--horizontal {
     position: relative;
     width: 80%;
-    height: 50px; 
+    height: 60px; // Un poco más de aire para el brillo
     margin: 3rem auto;
     display: flex;
     justify-content: center;
@@ -155,14 +155,14 @@
         z-index: 1;
     }
 
-    .center-clip-shape {
-        position: relative; // Para que el z-index funcione bien
-        z-index: 2;
-        width: 50px; 
-        height: 50px; 
+.flower-shape {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60px; 
+        height: 60px; 
         background-color: vars.$color-accent; 
-         top: 50%;
-        // El "molde" de la flor convertido a polígono de CSS
+        // Tu clip-path de polígono aquí...
         clip-path: polygon(
             50% 50%, 89% 31%, 89% 25%, 85% 15%, 80% 12%, 75% 11%, 69% 11%, 50% 50%,
             31% 11%, 25% 11%, 15% 12%, 12% 15%, 11% 25%, 11% 31%, 50% 50%,
@@ -173,9 +173,26 @@
             36% 91%, 40% 95%, 45% 98%, 50% 100%, 55% 98%, 60% 95%, 64% 91%, 50% 50%,
             9% 36%, 5% 40%, 2% 45%, 0% 50%, 2% 55%, 5% 60%, 9% 64%, 50% 50%
         );
+    }
 
-        animation: pulseAndSpin 15s ease-in-out infinite alternate,
-                   colorChange 15s ease-in-out infinite alternate; 
+.flower--center {
+        z-index: 3;
+        transform: translate(-50%, -50%); // Estática en el centro
+        animation: pulseAndSpin 15s ease-in-out infinite alternate;
+        filter: drop-shadow(0 0 8px rgba(vars.$color-accent, 0.6));
+    }
+
+    .flower--left {
+        z-index: 2;
+        background-color: vars.$color-sakura-light;
+        animation: travel-left 10s linear infinite; // Un poco más rápido para dinamismo
+    }
+    
+
+    .flower--right {
+        z-index: 2;
+        background-color: vars.$color-sakura-light;
+        animation: travel-right 10s linear infinite;
     }
 }
 
