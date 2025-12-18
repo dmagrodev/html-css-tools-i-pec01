@@ -155,7 +155,7 @@ const initLightboxGallery = () => {
                 if (webpSource) {
                     const srcset = webpSource.getAttribute('srcset');
                     
-                    // Regex para encontrar todas las URLs y sus descriptores de ancho (ej. "ruta.jpg?as=webp 1200w")
+                    // Regex para encontrar todas las URLs y sus descriptores de ancho
                     const matches = srcset.match(/([^\s]+)\s+\d+w/g); 
                     
                     if (matches && matches.length > 0) {
