@@ -26,7 +26,7 @@
     height: 25px;
     z-index: 10;
     pointer-events: none; 
-    animation: fallAndSpin linear infinite; // Usamos la animación base
+    animation: fallAndSpin linear infinite;
 }
 
 // PETALO 1 
@@ -100,6 +100,7 @@
         background-color: $color-accent;
     }
 }
+
 @keyframes colorChangeInverse {
     0% {
         background-color: $color-sakura-light;
@@ -112,25 +113,6 @@
     }
 }
 
-/* ================================== */
-/* KEYFRAMES Logo PNG*/
-/* ================================== */
-@keyframes logo-pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-}
-
-// ANIMACIONES movimiento flores
 @keyframes travel-left {
     0% { 
         transform: translate(-50%, -50%) scale(0.8) rotate(0deg); 
@@ -158,5 +140,24 @@
         transform: translate(-50%, -50%) scale(0.6) rotate(360deg); 
         left: 100%; 
         opacity: 0; 
+    }
+}
+
+/* ================================== */
+/* KEYFRAMES Logo PNG*/
+/* ================================== */
+
+@keyframes logo-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
     }
 }

@@ -60,69 +60,25 @@
     }
 }
 
+.uimg--large {
+  width: 100%;
+  height: auto;
+  border-radius: func.rem(15);
+  box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
+}
+
+.is-disabled{
+    pointer-events: none;
+}
+
 /* ================================== */
 /* SEPARADOR Tematico con CLIP-PATH SVG*/
 /* ================================== */
 
-
-// .useparator-kioto--horizontal {
-//     border: none;
-//     height: 1px;
-//     margin: 3rem auto; 
-//     position: relative;
-//     width: 80%;
-//     z-index: 1;
-//     height: 60px;
-    
-//     &::before {
-//         content: "";
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-        
-//         background: linear-gradient(
-//             to right, 
-//             vars.$color-sakura-dark, 
-//             vars.$color-sakura-light 50%, 
-//             vars.$color-sakura-dark
-//         );
-        
-//         mask-image: repeating-linear-gradient(
-//             45deg, 
-//             transparent 0 5px, 
-//             rgba(255, 255, 255, 0.2) 5px 10px, 
-//             transparent 10px 15px
-//         );
-//         mask-size: 100% 100%;
-
-//     }
-    
-//     height: 50px; 
-//     overflow: visible;
-
-//     .center-clip-shape {
-//         background-color: vars.$color-accent; 
-        
-//         width: 40px; 
-//         height: 40px; 
-//         position: absolute;
-//         top: 50%; 
-//         left: 50%;
-//         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-//         z-index: 2;
-//         clip-path: url(#center-flower-clip);
-//         animation: pulseAndSpin 15s ease-in-out infinite alternate,
-//                    colorChange 15s ease-in-out infinite alternate; 
-//         transform: translate(-50%, -50%);
-//     }
-// }
-    // clip-path: polygon(90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%, 10% 0);
 .useparator-kioto--horizontal {
     position: relative;
     width: 80%;
-    height: 60px; // Un poco más de aire para el brillo
+    height: 60px;
     margin: 3rem auto;
     display: flex;
     justify-content: center;
@@ -134,10 +90,10 @@
     &::before {
         content: "";
         position: absolute;
-        top: 50%; // Centramos la línea verticalmente
+        top: 50%;
         left: 0;
         width: 100%;
-        height: 100%; // Grosor de la línea
+        height: 100%; 
         transform: translateY(-50%);
         background: linear-gradient(
             to right,
@@ -145,7 +101,6 @@
             vars.$color-sakura-dark, 
             vars.$color-sakura-light 75%
         );
-        // He subido la opacidad del mask para que sea más visible
         mask-image: repeating-linear-gradient(
             45deg, 
             transparent 0 5px, 
@@ -162,7 +117,7 @@
         width: 60px; 
         height: 60px; 
         background-color: vars.$color-accent; 
-        // Tu clip-path de polígono aquí...
+
         clip-path: polygon(
             50% 50%, 89% 31%, 89% 25%, 85% 15%, 80% 12%, 75% 11%, 69% 11%, 50% 50%,
             31% 11%, 25% 11%, 15% 12%, 12% 15%, 11% 25%, 11% 31%, 50% 50%,
@@ -175,9 +130,9 @@
         );
     }
 
-.flower--center {
+    .flower--center {
         z-index: 3;
-        transform: translate(-50%, -50%); // Estática en el centro
+        transform: translate(-50%, -50%); 
         animation: pulseAndSpin 15s ease-in-out infinite alternate;
         filter: drop-shadow(0 0 8px rgba(vars.$color-accent, 0.6));
     }
@@ -185,7 +140,7 @@
     .flower--left {
         z-index: 2;
         background-color: vars.$color-sakura-light;
-        animation: travel-left 10s linear infinite; // Un poco más rápido para dinamismo
+        animation: travel-left 10s linear infinite;
     }
     
 
@@ -196,13 +151,3 @@
     }
 }
 
-.uimg--large {
-  width: 100%;
-  height: auto;
-  border-radius: func.rem(15);
-  box-shadow: 0 func.rem(4) func.rem(10) rgba(0, 0, 0, 0.15);
-}
-
-.is-disabled{
-    pointer-events: none;
-}
