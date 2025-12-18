@@ -221,6 +221,7 @@ const initMobileMenuToggle = () => {
 // -----------------------------------------------------------------//
 // COLLAPSABLE CONTENT para los containers
 // -----------------------------------------------------------------//
+
 const initCollapsibleContent = () => {
     const toggleButtons = document.querySelectorAll('.cat-details-toggle-btn');
     
@@ -230,12 +231,13 @@ const initCollapsibleContent = () => {
         
         if (contentElement) {
             button.addEventListener('click', () => {
-                const card = button.closest('.cat-card');
+                const card = button.closest('.cat-card');//añadido para la edicion del clip-path, no actualiza en netlify
                 const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
+                console.log('Botón clicado. Estado actual de aria-expanded:', isExpanded);
                 button.setAttribute('aria-expanded', !isExpanded);
-                contentElement.classList.toggle('cat-details-collapsable');
+                contentElement.classList.toggle('cat-details-collapsable');//añadido para la edicion del clip-path, no actualiza en netlify
                 card.classList.toggle('is-open');
+                console.log('Estado actualizado de aria-expanded:', button.getAttribute('aria-expanded'));
                 contentElement.classList.toggle('cat-details-collapsable-is-open');
             });
         }
