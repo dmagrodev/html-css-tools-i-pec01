@@ -65,57 +65,117 @@
 /* ================================== */
 
 
+// .useparator-kioto--horizontal {
+//     border: none;
+//     height: 1px;
+//     margin: 3rem auto; 
+//     position: relative;
+//     width: 80%;
+//     z-index: 1;
+//     height: 60px;
+    
+//     &::before {
+//         content: "";
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+        
+//         background: linear-gradient(
+//             to right, 
+//             vars.$color-sakura-dark, 
+//             vars.$color-sakura-light 50%, 
+//             vars.$color-sakura-dark
+//         );
+        
+//         mask-image: repeating-linear-gradient(
+//             45deg, 
+//             transparent 0 5px, 
+//             rgba(255, 255, 255, 0.2) 5px 10px, 
+//             transparent 10px 15px
+//         );
+//         mask-size: 100% 100%;
+
+//     }
+    
+//     height: 50px; 
+//     overflow: visible;
+
+//     .center-clip-shape {
+//         background-color: vars.$color-accent; 
+        
+//         width: 40px; 
+//         height: 40px; 
+//         position: absolute;
+//         top: 50%; 
+//         left: 50%;
+//         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+//         z-index: 2;
+//         clip-path: url(#center-flower-clip);
+//         animation: pulseAndSpin 15s ease-in-out infinite alternate,
+//                    colorChange 15s ease-in-out infinite alternate; 
+//         transform: translate(-50%, -50%);
+//     }
+// }
+
 .useparator-kioto--horizontal {
-    border: none;
-    height: 1px;
-    margin: 3rem auto; 
     position: relative;
     width: 80%;
+    height: 50px; 
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
-    height: 60px;
-    
+    overflow: visible;
+    clip-path: polygon(90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%, 10% 0);
+
     &::before {
         content: "";
         position: absolute;
-        top: 0;
+        top: 50%; // Centramos la línea verticalmente
         left: 0;
         width: 100%;
-        height: 100%;
-        
+        height: 100%; // Grosor de la línea
+        transform: translateY(-50%);
         background: linear-gradient(
-            to right, 
+            to right,
+            vars.$color-sakura-light 25%,  
             vars.$color-sakura-dark, 
-            vars.$color-sakura-light 50%, 
-            vars.$color-sakura-dark
+            vars.$color-sakura-light 75%
         );
-        
+        // He subido la opacidad del mask para que sea más visible
         mask-image: repeating-linear-gradient(
             45deg, 
             transparent 0 5px, 
-            rgba(255, 255, 255, 0.2) 5px 10px, 
-            transparent 10px 15px
+            rgba(0, 0, 0, 0.5) 10px 10px, 
+            transparent 10px 10px
         );
-        mask-size: 100% 100%;
-
+        z-index: 1;
     }
-    
-    height: 50px; 
-    overflow: visible;
 
     .center-clip-shape {
-        background-color: vars.$color-accent; 
-        
-        width: 40px; 
-        height: 40px; 
-        position: absolute;
-        top: 50%; 
-        left: 50%;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        position: relative; // Para que el z-index funcione bien
         z-index: 2;
-        clip-path: url(#center-flower-clip);
+        width: 50px; 
+        height: 50px; 
+        background-color: vars.$color-accent; 
+         top: 50%;
+        // El "molde" de la flor convertido a polígono de CSS
+        clip-path: polygon(
+            50% 50%, 89% 31%, 89% 25%, 85% 15%, 80% 12%, 75% 11%, 69% 11%, 50% 50%,
+            31% 11%, 25% 11%, 15% 12%, 12% 15%, 11% 25%, 11% 31%, 50% 50%,
+            69% 89%, 75% 89%, 85% 88%, 88% 85%, 89% 80%, 89% 75%, 50% 50%,
+            11% 69%, 11% 75%, 12% 85%, 15% 88%, 25% 89%, 31% 89%, 50% 50%,
+            91% 64%, 95% 60%, 98% 55%, 100% 50%, 98% 45%, 95% 40%, 91% 36%, 50% 50%,
+            64% 9%, 60% 5%, 55% 2%, 50% 0%, 45% 2%, 40% 5%, 36% 9%, 50% 50%,
+            36% 91%, 40% 95%, 45% 98%, 50% 100%, 55% 98%, 60% 95%, 64% 91%, 50% 50%,
+            9% 36%, 5% 40%, 2% 45%, 0% 50%, 2% 55%, 5% 60%, 9% 64%, 50% 50%
+        );
+
         animation: pulseAndSpin 15s ease-in-out infinite alternate,
                    colorChange 15s ease-in-out infinite alternate; 
-        transform: translate(-50%, -50%);
     }
 }
 

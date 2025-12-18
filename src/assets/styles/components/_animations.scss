@@ -77,15 +77,15 @@
 
 @keyframes pulseAndSpin {
     0% {
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
     }
     
     50% {
-        transform: translate(-50%, -50%) scale(1.1) rotate(180deg);
+        transform: translate(-50%, -50%) scale(1) rotate(180deg);
     }
     
     100% {
-        transform: translate(-50%, -50%) scale(1) rotate(360deg);
+        transform: translate(-50%, -50%) scale(0.8) rotate(360deg);
     }
 }
 
@@ -98,6 +98,17 @@
     }
     100% {
         background-color: $color-accent;
+    }
+}
+@keyframes colorChangeInverse {
+    0% {
+        background-color: $color-sakura-light;
+    }
+    50% {
+        background-color:  $color-accent;
+    }
+    100% {
+        background-color: $color-sakura-light;
     }
 }
 
