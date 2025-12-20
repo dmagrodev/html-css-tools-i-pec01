@@ -131,9 +131,10 @@ const initLightboxGallery = () => {
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const closeBtn = document.querySelector('.lightbox__close-btn');
+   
 
     const openLightbox = (imageSrc) => {
-        lightboxImage.src = imageSrc;
+        lightboxImage.src = imageSrc.trim();
         lightbox.classList.add('is-open');
         document.body.style.overflow = 'hidden';
     };
@@ -150,18 +151,17 @@ const initLightboxGallery = () => {
             let fullUrl = image.getAttribute("data-full-src"); 
 
             if (picture) {
-                const webpSource = picture.querySelector('source[type="image/webp"]');
+                const source = picture.querySelector('source[type="image/avif"]') || 
+                               picture.querySelector('source[type="image/webp"]');
                 
-                if (webpSource) {
-                    const srcset = webpSource.getAttribute('srcset');
+            if (source) {
+                    const srcset = source.getAttribute('srcset');
                     
-                    // Regex para encontrar todas las URLs y sus descriptores de ancho
-                    const matches = srcset.match(/([^\s]+)\s+\d+w/g); 
+                    const candidates = srcset.split(',');
                     
-                    if (matches && matches.length > 0) {
-                        const lastMatch = matches[matches.length - 1];
-                        fullUrl = lastMatch.split(' ')[0]; 
-                    }
+                    const lastCandidate = candidates[candidates.length - 1].trim();
+                    
+                    fullUrl = lastCandidate.split(/\s+/)[0]; 
                 }
             }
 
