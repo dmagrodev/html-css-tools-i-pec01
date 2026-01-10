@@ -6,10 +6,10 @@
     <title>KIOTO Travel</title>
     <link rel="stylesheet" href="./assets/styles/main.scss" />
     <script type="module" src="./assets/scripts/main.js" defer></script>
+    <meta name="description" content="Guía de viaje a Kioto">
   </head>
   <body class="kioto-body">
      <include src="./views/partials/_header.html" id = "inicio"></include>
-     <!-- <include src="./views/partials/_sakura_petals.html"></include> -->
      <main >  
      <div id="inicio" class="kioto-container-portada">
               <h1 class="kioto-title__text">Kioto 京都 </h1>
@@ -28,7 +28,8 @@
                                     sizes="100vw" type="image/webp" />
                             <source media="(max-width: 768px)" srcset="./assets/resources/images/home_pexels-dsd-800w.jpg?as=webp 800w" 
                                   sizes="100vw" type="image/webp" />
-                            <img class="slider__image gallery__image" src="./assets/resources/images/home_pexels-dsd-1200w.jpg" alt="Pasarela de puertas Torii Rojas, Fushimi Inari Taisha" class="slider__image gallery__image" loading="eager" tabindex="0" 
+                            <img class="slider__image gallery__image" src="./assets/resources/images/home_pexels-dsd-1200w.jpg" alt="Pasarela de puertas Torii Rojas, Fushimi Inari Taisha" class="slider__image gallery__image" 
+                                  loading="eager" fetchpriority="high" tabindex="0" 
                                   role="button" 
                                   aria-label="Ver imagen en tamaño completo">
                           </picture>
