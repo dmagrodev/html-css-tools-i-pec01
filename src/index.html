@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIOTO Travel</title>
     <link rel="stylesheet" href="./assets/styles/main.scss" />
-
+    <script type="module" src="./assets/scripts/main.js" defer></script>
   </head>
   <body class="kioto-body">
      <include src="./views/partials/_header.html" id = "inicio"></include>
@@ -46,7 +46,7 @@
                                   sizes="100vw" type="image/webp" />
                             <img src="./assets/resources/images/home_Bamboo-Forest-Kimono-1200w.jpg" alt="Bosque de Bambu, Arasiyama" class="slider__image gallery__image"  tabindex="0" 
                                   role="button" 
-                                  aria-label="Ver imagen en tamaño completo">
+                                  aria-label="Ver imagen en tamaño completo" loading="lazy">
                           </picture>
                         </div>
                         <div class="slider__slide ">
@@ -61,7 +61,7 @@
                                   sizes="100vw" type="image/webp" />
                             <img src="./assets/resources/images/Kiyomizu_Temple-1200w.jpg" alt="Kiyomizudera view" class="slider__image gallery__image"  tabindex="0" 
                                   role="button" 
-                                  aria-label="Ver imagen en tamaño completo">
+                                  aria-label="Ver imagen en tamaño completo" loading="lazy">
                           </picture>
                         </div>
                       </div>
@@ -127,17 +127,6 @@
 
                 <div class="kioto-two-column-container">
                    <div class="kioto-two-col-container__img">
-                    <!-- <svg width="0" height="0" style="position: absolute;">
-                    <mask id="soft-vignette-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
-                    <radialGradient id="vignette-grad">
-                    <stop offset="0%" stop-color="black" stop-opacity="1"/> 
-                    <stop offset="60%" stop-color="white" stop-opacity="1"/> 
-                    <stop offset="100%" stop-color="black" stop-opacity="1"/> 
-                    </radialGradient>
-
-                    <rect x="0" y="0" width="1" height="1" fill="url(#vignette-grad)" />
-                    </mask>
-                    </svg> -->
                       <picture>
                         <source type="image/avif"
                                 srcset="./assets/resources/images/home_pexels-dsd-400w.jpg?as=avif&width=400 400w, 
@@ -157,7 +146,7 @@
                             sizes="(max-width: 600px) 100vw, (max-width: 1200px) 80vw, 1200px"  
                             src="./assets/resources/images/home_pexels-dsd-1200w.jpg"  alt="Fushimi inari, puertas tori"  tabindex="0" 
                             role="button" 
-                            aria-label="Ver imagen en tamaño completo"/>
+                            aria-label="Ver imagen en tamaño completo" loading="lazy"/>
                     </picture>    
                    </div>
 
@@ -178,11 +167,10 @@
           <div id="lightbox" class="lightbox">
         <div class="lightbox__content">
             <button class="lightbox__close-btn" aria-label="Cerrar galería modal"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-            <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png?" class="lightbox__image" alt="Imagen ampliada">
-      </div>
+            <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png" class="lightbox__image" alt="Imagen ampliada" loading="lazy">
+        </div>
     </main>
     <include src="./views/partials/_footer.html" id = "footer"></include>
-     <script type="module" src="./assets/scripts/main.js"></script>
     <include src="./views/partials/_sakura_petals.html"/>
   </body>
 </html>

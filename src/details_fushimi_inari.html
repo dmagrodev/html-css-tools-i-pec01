@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIOTO Travel</title>
     <link rel="stylesheet" href="./assets/styles/main.scss" />
-
+    <script type="module" src="./assets/scripts/main.js" defer></script>
   </head>
   <body class="kioto-body">
      <include src="./views/partials/_header.html" id = "inicio"></include>
@@ -24,6 +24,8 @@
                                     sizes="100vw" type="image/webp" />
                               <img src="./assets/resources/images/Fushimi_inari_tori.jpg" alt="Fushimi Inari, torii" class="slider__image gallery__image" tabindex="0" 
                                   role="button" 
+                                  loading="eager"
+                                  fetchpriority="high"
                                   aria-label="Ver imagen en tamaño completo">
                             </picture>
                           </div>
@@ -35,6 +37,7 @@
                                     sizes="100vw" type="image/webp" />
                               <img src="./assets/resources/images/fushimi-inari-inari.jpg" alt="Fushimi Inari, Inari" class="slider__image gallery__image"  tabindex="0" 
                                   role="button" 
+                                  loading="lazy"
                                   aria-label="Ver imagen en tamaño completo">
                             </picture>
                         </div>
@@ -46,6 +49,7 @@
                                   sizes="100vw" type="image/webp" />
                             <img src="./assets/resources/images/fushimi-inari-temple.jpg" alt="Fushimi Inari, Honden" class="slider__image gallery__image"  tabindex="0" 
                                   role="button" 
+                                  loading="lazy"
                                   aria-label="Ver imagen en tamaño completo">
                         </picture>
                         </div>
@@ -97,6 +101,7 @@
                           <source media="(max-width: 768px)" srcset="./assets/resources/images/fushimi-inari-temple-crop.jpg?as=webp 800w" 
                                 sizes="100vw" type="image/webp" />
                           <img class="kioto-two-column-container__img-item gallery__image" src="./assets/resources/images/fushimi-inari-temple.jpg" alt="Fushimi Inari Honden" class="gallery__image"  tabindex="0" 
+                              loading="lazy"
                               role="button" 
                               aria-label="Ver imagen en tamaño completo">
                         </picture>
@@ -124,7 +129,8 @@
                         <img class="kioto-two-column-container__img-item gallery__image" 
                               src="./assets/resources/images/Fushimi_inari_tori.jpg" 
                               alt="Fushimi Inari Torii" class="gallery__image" 
-                               tabindex="0" 
+                              tabindex="0"
+                              loading="lazy" 
                               role="button" 
                               aria-label="Ver imagen en tamaño completo">
                       </picture>
@@ -158,6 +164,7 @@
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39724.490923289646!2d135.7430105093234!3d34.96730151325743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60010f153d2e6d21%3A0x7b1aca1c753ae2e9!2sFushimi%20Inari-taisha!5e1!3m2!1ses!2ses!4v1762713299000!5m2!1ses!2ses" 
                         style="border:0;" 
                         aria-label="google maps fushimi inari"
+                        loading="lazy"
                         allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade">
                       </iframe>
 
@@ -186,6 +193,7 @@
                           title="YouTube video player" 
                           aria-label="Vídeo promocional de fushimi Inari"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          loading="lazy"
                           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
                         </iframe>
@@ -199,16 +207,15 @@
                     
                     <a href="https://www.kiyomizudera.or.jp/en/visit/special_night_viewing/" class="cat-card__link utext--right">Kiyomizu-dera Temple</a>
                 </div>
-
     </div>
 
       <div id="lightbox" class="lightbox">
         <div class="lightbox__content">
             <button class="lightbox__close-btn" aria-label="Cerrar galería modal"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-            <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png?" class="lightbox__image" alt="Imagen ampliada">
+            <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png" class="lightbox__image" loading="lazy"alt="Imagen ampliada">
       </div>
     </div>
     <include src="./views/partials/_footer.html" id = "footer"></include>
   </body>
-  <script type="module" src="./assets/scripts/main.js"></script>
+
 </html>

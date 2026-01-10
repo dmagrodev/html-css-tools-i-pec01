@@ -1,8 +1,8 @@
 
-+( function() {
-  const kioto = "Kioto";
-  console.log(`Hello, ${kioto}!`);
-} )();
+// +( function() {
+//   const kioto = "Kioto";
+//   console.log(`Hello, ${kioto}!`);
+// } )();
 
 //https://docs.fontawesome.com/apis/javascript aqui documentacion
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
@@ -27,7 +27,7 @@ class imageSlider {
 
         this.currentIndex = 0;
         this.totalSlides = this.slides.length;
-        this.autoAdvanceTime = 7000;
+        this.autoAdvanceTime = 10000;
         this.autoAdvanceInterval = null;
 
         // Inicializar el slider
@@ -63,7 +63,7 @@ class imageSlider {
     }
     
     prevSlide = () => {
-        this.moveToSlide(this.currentIndex - 1);gallery__image
+        this.moveToSlide(this.currentIndex - 1);
     }
 
     startAutoAdvance() {

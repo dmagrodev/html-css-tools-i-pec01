@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIOTO Travel</title>
     <link rel="stylesheet" href="./assets/styles/main.scss" />
-
+    <script type="module" src="./assets/scripts/main.js" defer ></script>
   </head>
   <body class="kioto-body">
      <include src="./views/partials/_header.html" id = "inicio"></include>
@@ -29,6 +29,8 @@
                                   sizes="100vw" type="image/webp" />
                               <img src="./assets/resources/images/Kiyomizu_Temple-1200w.jpg" alt="Vista panorámica del templo Kiyomizudera" 
                                class="slider__image gallery__image" tabindex="0" 
+                               loading="eager"
+                               fetchpriority="high"
                                role="button" 
                                aria-label="Ver imagen en tamaño completo"/>
                           </picture>
@@ -46,6 +48,7 @@
                                         sizes="100vw" type="image/webp" /> 
                                 <img src="./assets/resources/images/home_Kiyozumi_Dera_Night-md.jpg" alt="Vista nocturna del templo Kiyomizudera" 
                                     class="slider__image gallery__image"  tabindex="0" 
+                                    loading="lazy"
                                     role="button" 
                                     aria-label="Ver imagen en tamaño completo">
                             </picture>
@@ -103,7 +106,8 @@
                           <img class="kioto-two-column-container__img-item gallery__image" 
                               src="./assets/resources/images/kiyomizudera-details.jpg" 
                               alt="Kiyozumi-dera otoño" 
-                               tabindex="0" 
+                              tabindex="0" 
+                              loading="lazy"
                               role="button" 
                               aria-label="Ver imagen en tamaño completo"/>
                       </picture>    
@@ -116,7 +120,7 @@
   
                   <div class="kioto-two-col-container__map">
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5122.815022032135!2d135.77959845868955!3d34.99424358211534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108d385dcfb07%3A0x62af658650c434ba!2sKiyomizu-dera!5e1!3m2!1ses!2ses!4v1762706603402!5m2!1ses!2ses" 
-                                style="border:0;" allowfullscreen=""  
+                                style="border:0;" allowfullscreen=""  loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade" title="google maps kiyomizudera">
                       </iframe>
 
@@ -137,6 +141,7 @@
                 <div class="kioto-content-block kioto-content-block--centered">
                     <p class="kioto-two-column-container__title utext--title">Un paseo por Kiyomizudera</p>
                             <iframe style="border: none;" src="https://www.youtube.com/embed/TWXTrY_RcBs?si=P9N4DUm2v1sFOTq9" 
+                            loading="lazy"
                             title="YouTube video player"
                             aria-label="Vídeo promocional de Kiyomizudera"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -161,10 +166,10 @@
       <div id="lightbox" class="lightbox">
         <div class="lightbox__content">
             <button class="lightbox__close-btn" aria-label="Cerrar galería modal"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-            <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png?" class="lightbox__image" alt="Imagen ampliada">
+            <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png" class="lightbox__image" loading="lazy" alt="Imagen ampliada">
+        </div>
       </div>
-    </div>
     <include src="./views/partials/_footer.html" id = "footer"></include>
   </body>
-  <script type="module" src="./assets/scripts/main.js" ></script>
+
 </html>

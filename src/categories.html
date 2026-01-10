@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIOTO Travel - Que Visitar</title>
     <link rel="stylesheet" href="./assets/styles/main.scss" />
-
+    <script type="module" src="./assets/scripts/main.js" defer></script>
   </head>
   <body class="kioto-body">
      <include src="./views/partials/_header.html" id = "inicio"></include>
@@ -51,8 +51,10 @@
                       <img src="./assets/resources/images/Kiyomizu_Temple-400w.jpg" 
                           alt="Templo Kiyomizudera, vista parcial de la terraza de madera" 
                           class="cat-card__image gallery__image"  tabindex="0" 
-     role="button" 
-     aria-label="Ver imagen en tamaño completo"/>
+                          loading="eager"
+                          fetchpriority="high"
+                          role="button" 
+                          aria-label="Ver imagen en tamaño completo"/>
                   </picture>
 
                     <div class="cat-card__header">
@@ -98,6 +100,7 @@
                       <img src="./assets/resources/images/home_pexels-dsd-400w.jpg" 
                           alt="Fushimi Inari, pasarela de torii rojas" class="cat-card__image gallery__image"   tabindex="0" 
                           role="button" 
+                          loading="eager"
                           aria-label="Ver imagen en tamaño completo"/>
                   </picture>
 
@@ -142,6 +145,8 @@
                       <img src="./assets/resources/images/Gion-main-400w.jpg" 
                           alt="Barrio de Gion, calle principal con casas tradicionales" 
                           class="cat-card__image gallery__image"  tabindex="0" 
+                          loading="eager"
+                          fetchpriority="high"
                           role="button" 
                           aria-label="Ver imagen en tamaño completo"/>
                   </picture>
@@ -186,6 +191,8 @@
                       <img src="./assets/resources/images/Cherry_Blossom_Higashiyama-400w.jpg" 
                           alt="Barrio Higashiyama, calle con cerezos en flor" 
                           class="cat-card__image gallery__image"  tabindex="0" 
+                          loading="eager"
+                          fetchpriority="high"
                           role="button" 
                           aria-label="Ver imagen en tamaño completo"/>
                   </picture>
@@ -227,6 +234,7 @@
                       <img src="./assets/resources/images/nisiki_market-400w.jpg"
                           alt="Mercado Nishiki, puestos de comida y productos locales" 
                           class="cat-card__image gallery__image" tabindex="0" 
+                          loading="lazy"
                           role="button" 
                           aria-label="Ver imagen en tamaño completo" />
                   </picture>
@@ -284,6 +292,7 @@
                             alt="Bosque de Bambú, Arashiyama" 
                             class="cat-card__image gallery__image" 
                             tabindex="0" 
+                            loading="lazy"
                             role="button" 
                             aria-label="Ver imagen en tamaño completo" />
                     </picture>
@@ -326,7 +335,8 @@
                         <img src="./assets/resources/images/togetsukyo-brige-400w.jpg"
                             alt="Puente Togetsukyo sobre el río Hozu" 
                             class="cat-card__image gallery__image" 
-                             tabindex="0" 
+                            tabindex="0" 
+                            loading="lazy"
                             role="button" 
                             aria-label="Ver imagen en tamaño completo" />
                     </picture>
@@ -380,7 +390,8 @@
                         <img src="./assets/resources/images/kinkakuji-kyoto-japan-400w.jpg"
                             alt="Templo Kinkaku-Ji, el Pabellón Dorado" 
                             class="cat-card__image gallery__image" 
-                             tabindex="0" 
+                            tabindex="0"
+                            loading="lazy" 
                             role="button" 
                             aria-label="Ver imagen en tamaño completo"/>
                     </picture>
@@ -425,7 +436,8 @@
                         <img src="./assets/resources/images/castillo-nijo-400w.jpg"
                             alt="Castillo Nijo, entrada principal" 
                             class="cat-card__image gallery__image" 
-                             tabindex="0" 
+                            tabindex="0" 
+                            loading="lazy"
                             role="button" 
                             aria-label="Ver imagen en tamaño completo"/>
                     </picture>
@@ -486,7 +498,8 @@
                           src="./assets/resources/images/osaka-castle-panoramic-400.jpg" 
                           alt="Castillo de Osaka visto desde el foso con puente" 
                           class="cat-card__image gallery__image"
-                           tabindex="0" 
+                          tabindex="0" 
+                          loading="lazy"
                           role="button" 
                           aria-label="Ver imagen en tamaño completo"/>
                   </picture>
@@ -535,7 +548,8 @@
                         <img src="./assets/resources/images/nara-nara-400w.jpg"
                             alt="Ciervo frente a un templo tradicional en el parque de Nara" 
                             class="cat-card__image gallery__image" 
-                             tabindex="0" 
+                            tabindex="0"
+                            loading="lazy" 
                             role="button" 
                             aria-label="Ver imagen en tamaño completo" />
                     </picture>
@@ -581,7 +595,8 @@
                         <img src="./assets/resources/images/Kifune-Kifune-400w.jpg"
                             alt="Santuario Kifune-jinja, camino de entrada con linternas" 
                             class="cat-card__image gallery__image" 
-                             tabindex="0" 
+                            tabindex="0"
+                            loading="lazy" 
                             role="button" 
                             aria-label="Ver imagen en tamaño completo"/>
                     </picture>
@@ -625,7 +640,8 @@
                         <img src="./assets/resources/images/himeji-castle-400w.jpg"
                             alt="himeji castle" 
                             class="cat-card__image gallery__image" 
-                            tabindex="0" 
+                            tabindex="0"
+                            loading="lazy" 
                             role="button" 
                             aria-label="Ver imagen en tamaño completo"/>
                     </picture>
@@ -646,7 +662,6 @@
                         Pero hay mucho más para disfrutar dentro de la ciudad y los alrededores.</p>
                     </div>
                 </div>
-                
                 </div>
             </section>
 
@@ -656,12 +671,12 @@
       <div id="lightbox" class="lightbox">
         <div class="lightbox__content">
             <button class="lightbox__close-btn" aria-label="Cerrar galería modal"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-            <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png?" class="lightbox__image" alt="Imagen ampliada">
+            <img id="lightbox-image" src="./assets/resources/images/logokioto-alpha.png" class="lightbox__image" alt="Imagen ampliada" loading="lazy">
         </div>
       </div>
     
       <include src="./views/partials/_footer.html" id = "footer"></include>
-      <script type="module" src="./assets/scripts/main.js" ></script>
+
       <include src="./views/partials/_sakura_petals.html"/>
   </body>
 
