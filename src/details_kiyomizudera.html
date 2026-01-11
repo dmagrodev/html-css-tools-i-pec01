@@ -20,37 +20,41 @@
                         <div class="slider__slide slider__slide--active">
                           <picture>
                             <source media="(min-width: 768px)" srcset="./assets/resources/images/Kiyomizu_Temple-1200w.jpg?as=avif 1200w" 
-                                    sizes="100vw" type="image/avif" />
+                                    sizes="(min-width: 1200px) 1000px, 80vw" type="image/avif" />
                             <source media="(max-width: 767px)" srcset="./assets/resources/images/Kiyomizu_Temple-crop.jpg?as=avif 800w" 
                                   sizes="100vw" type="image/avif" />
 
                             <source media="(min-width: 768px)" srcset="./assets/resources/images/Kiyomizu_Temple-1200w.jpg?as=webp 1200w" 
-                                    sizes="100vw" type="image/webp" />
+                                    sizes="(min-width: 1200px) 1000px, 80vw" type="image/webp" />
                             <source media="(max-width: 767px)" srcset="./assets/resources/images/Kiyomizu_Temple-crop.jpg?as=webp 800w" 
                                   sizes="100vw" type="image/webp" />
                               <img src="./assets/resources/images/Kiyomizu_Temple-1200w.jpg" alt="Vista panorámica del templo Kiyomizudera" 
                                class="slider__image gallery__image" tabindex="0" 
                                loading="eager"
-                               fetchpriority="high"
+                               fetchpriority="high" 
                                role="button" 
-                               aria-label="Ver imagen en tamaño completo"/>
+                               aria-label="Ver imagen en tamaño completo"     
+                               width="1200" 
+                               height="800"/>
                           </picture>
                         </div>
                         <div class="slider__slide ">
                             <picture>
                                <source media="(min-width: 768px)" srcset="./assets/resources/images/home_Kiyozumi_Dera_Night-md.jpg?as=avif 1200w" 
-                                       sizes="100vw" type="image/avif" /> 
+                                       sizes="(min-width: 1200px) 1000px, 80vw" type="image/avif" /> 
                                 <source media="(max-width: 767px)" srcset="./assets/resources/images/home_Kiyozumi_Dera_Night-md-crop.jpg?as=avif 600w" 
                                         sizes="100vw" type="image/avif" /> 
                                         
                                 <source media="(min-width: 768px)" srcset="./assets/resources/images/home_Kiyozumi_Dera_Night-md.jpg?as=webp 1200w" 
-                                        sizes="100vw" type="image/webp" /> 
+                                        sizes="(min-width: 1200px) 1000px, 80vw" type="image/webp" />
                                 <source media="(max-width: 767px)" srcset="./assets/resources/images/home_Kiyozumi_Dera_Night-md-crop.jpg?as=webp 600w" 
                                         sizes="100vw" type="image/webp" /> 
                                 <img src="./assets/resources/images/home_Kiyozumi_Dera_Night-md.jpg" alt="Vista nocturna del templo Kiyomizudera" 
                                     class="slider__image gallery__image"  tabindex="0" 
                                     loading="lazy"
-                                    role="button" 
+                                    role="button"
+                                    width="1200" 
+                                    height="800"
                                     aria-label="Ver imagen en tamaño completo">
                             </picture>
                         </div>
